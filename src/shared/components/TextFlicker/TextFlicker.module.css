@@ -1,0 +1,20 @@
+.position {
+    display: inline-block;
+    color: var(--color-accent);
+    animation: flicker 1s infinite;
+    max-height: 58px;
+}
+
+@keyframes flicker {
+    0% {
+        border-right: var(--main-text-color) 3px solid;
+    }
+
+    50% {
+        border: none;
+    }
+
+    100% {
+        border-right: var(--main-text-color) 3px solid;
+    }
+}

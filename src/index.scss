@@ -38,6 +38,7 @@ select {
     --font-size-extra-small: 12px;
 }
 
-html {
+body {
     font-family: "ProximaNova", "serif";
+    background: var(--color-base-bg);
 }

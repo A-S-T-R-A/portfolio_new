@@ -1,0 +1,44 @@
+.wrapper {
+    position: fixed;
+    background-color: var(--main-bg-color);
+    /*  #0f1624cd; */
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--main-text-color);
+    /* white; */
+}
+
+.logoContainer {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 40px;
+    max-width: 130px;
+}
+
+.logo {
+    padding: 0 10px;
+    position: relative;
+}
+
+@media (max-width: 961px) {
+    .logoContainer {
+        position: absolute;
+        left: 1rem;
+        top: 1.5rem;
+    }
+}
