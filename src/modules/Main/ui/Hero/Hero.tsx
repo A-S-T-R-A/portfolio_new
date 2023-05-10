@@ -1,9 +1,6 @@
 import { BsArrowRightCircle } from "react-icons/bs"
-import styles from "./Hero.module.css"
+import styles from "./Hero.module.scss"
 import { Button, ButtonVariant } from "shared/ui/Button/Button"
-import { TextFlicker } from "shared/components/TextFlicker"
-
-const flickerData = ["Web Developer", "UI/UX Designer", "Content Creator"]
 
 function Hero() {
     function clickHandler() {
@@ -11,11 +8,11 @@ function Hero() {
     }
 
     return (
-        <div className={styles.content}>
+        <div className={styles.container}>
             <h1 className={styles.greeting}>
                 Hi! My name is Artur
                 <br />
-                I'm <TextFlicker toRotate={flickerData} />
+                I'm Artur
             </h1>
             <p className={styles.text}>
                 My name is Artur Pazyniuk. I'm a software engineer specializing in building

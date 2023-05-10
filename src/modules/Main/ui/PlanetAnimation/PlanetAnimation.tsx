@@ -1,4 +1,3 @@
-import React from "react"
 import styles from "./PlanetAnimation.module.css"
 import { planet, satellite, bigSatellite } from "shared/assets/images/mainSection"
 
