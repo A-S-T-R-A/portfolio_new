@@ -1,4 +1,4 @@
-import { TechnologiesList } from "./components/TechnologiesList/TechnologiesList"
+import { TechnologiesList } from "./TechnologiesList/TechnologiesList"
 import styles from "./Technologies.module.css"
 
 function Technologies() {

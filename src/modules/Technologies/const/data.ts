@@ -10,7 +10,14 @@ import {
     graphqlIcon,
 } from "shared/assets/images/technologies"
 
-export const technologiesData = [
+export interface ITechnologyItem {
+    id: number
+    title: string
+    img: string
+    desc: string
+}
+
+export const technologiesData: ITechnologyItem[] = [
     {
         id: 1,
         title: "React.js",

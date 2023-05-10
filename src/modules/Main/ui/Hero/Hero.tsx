@@ -1,6 +1,6 @@
 import { BsArrowRightCircle } from "react-icons/bs"
-import styles from "./Hero.module.scss"
 import { Button, ButtonVariant } from "shared/ui/Button/Button"
+import styles from "./Hero.module.scss"
 
 function Hero() {
     function clickHandler() {

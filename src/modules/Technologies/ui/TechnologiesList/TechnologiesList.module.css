@@ -1,4 +1,19 @@
 .container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
     display: flex;
     flex-direction: column;
     text-align: center;
