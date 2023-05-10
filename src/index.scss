@@ -16,6 +16,26 @@ select {
     font: inherit;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+span.accent {
+    -webkit-text-fill-color: var(--accent-color);
+}
+
 @font-face {
     font-family: "ProximaNova";
     src: url("shared/assets/fonts/ProximaNovaReg.otf") format("opentype");
@@ -41,4 +61,5 @@ select {
 body {
     font-family: "ProximaNova", "serif";
     background: var(--color-base-bg);
+    color: var(--color-base);
 }

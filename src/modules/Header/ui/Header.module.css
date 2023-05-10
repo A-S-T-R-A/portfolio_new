@@ -1,7 +1,6 @@
 .wrapper {
     position: fixed;
-    background-color: var(--main-bg-color);
-    /*  #0f1624cd; */
+    background-color: var(--color-base-bg);
     width: 100%;
     min-height: 70px;
     display: flex;
@@ -18,8 +17,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    color: var(--main-text-color);
-    /* white; */
+    color: var(--color-base);
+
 }
 
 .logoContainer {
@@ -41,4 +40,10 @@
         left: 1rem;
         top: 1.5rem;
     }
+}
+
+.navbar {
+    display: none;
+    width: 100%;
+    max-width: 1000px;
 }

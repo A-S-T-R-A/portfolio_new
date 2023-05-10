@@ -1,16 +1,17 @@
-import styles from "./Navigation.module.css"
-import { Burger, Navbar } from "./components"
+import styles from "./Header.module.css"
 import Art1us from "shared/assets/images/art1us.png"
+import { Navbar } from "./Navbar/Navbar"
+import { Burger } from "./Burger/Burger"
 
-export function Navigation() {
+export function Header() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.logoContainer}>
                     <img src={Art1us} className={styles.logo} alt="" />
                 </div>
-                <Navbar />
-                <Burger />
+                <Navbar className={styles.navbar} />
+                <Burger className={styles.burger} />
             </div>
         </div>
     )

@@ -1,13 +1,13 @@
 import Form from "modules/Form/Form"
+import { Header } from "modules/Header"
 import { Main } from "modules/Main"
-import { Navigation } from "modules/Navigation"
 import { Projects } from "modules/Projects"
 import { Technologies } from "modules/Technologies"
 
 function App() {
     return (
         <div>
-            <Navigation />
+            <Header />
             <div>
                 <Main />
                 <Projects />

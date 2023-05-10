@@ -1,8 +1,13 @@
-import styles from "./SocialIcons.module.css"
+import styles from "./SocialIcons.module.scss"
 import { socialsData } from "./data"
 import { classNames } from "shared/lib/classNames/classNames"
 
-export function SocialIcons({ onClick, className }) {
+interface ISocialIconsProps {
+    onClick?: () => void
+    className?: string
+}
+
+export function SocialIcons({ onClick, className }: ISocialIconsProps) {
     const containerClassName = classNames(styles.socials, {}, [className])
     return (
         <div onClick={onClick} className={containerClassName}>
