@@ -17,21 +17,27 @@ select {
 }
 
 @font-face {
-    font-family: 'ProximaNova';
-    src: url('shared/assets/fonts/ProximaNovaReg.otf') format('opentype');
+    font-family: "ProximaNova";
+    src: url("shared/assets/fonts/ProximaNovaReg.otf") format("opentype");
     font-weight: 400;
 }
 
 :root {
     --color-accent: #743ad0;
     --color-base: white;
-    --color-gray: #807d96;
+    --color-dark-gray: #807d96;
     --color-base-bg: #050816;
     --color-light-bg: #151030;
+
+    --font-size-h1: 36px;
+    --font-size-h2: 28px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-extra-small: 12px;
 }
 
 html {
-
     font-family: "ProximaNova", "serif";
-
 }
