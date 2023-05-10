@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    margin: 0;
+    font: inherit;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('shared/assets/fonts/ProximaNovaReg.otf') format('opentype');
+    font-weight: 400;
+}
+
+:root {
+    --color-accent: #743ad0;
+    --color-base: white;
+    --color-gray: #807d96;
+    --color-base-bg: #050816;
+    --color-light-bg: #151030;
+}
+
+html {
+
+    font-family: "ProximaNova", "serif";
+
+}
