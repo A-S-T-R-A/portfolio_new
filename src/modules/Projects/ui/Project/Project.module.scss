@@ -1,0 +1,131 @@
+.container {
+    background: var(--color-light-bg);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
+    max-width: 85vw;
+}
+
+.content {
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 450px;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-evenly;
+
+    .description {
+        text-align: center;
+    }
+
+    .technologies {
+        display: flex;
+        gap: 10px;
+
+        .technology {
+            padding: 2px 5px;
+            border-radius: 3px;
+            border: 1px solid var(--color-dark-gray);
+        }
+    }
+
+    .buttons {
+        display: flex;
+        gap: 30px;
+
+        > .btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+
+            .icon {
+                font-size: var(--font-size-h4);
+            }
+
+            &:hover {
+                > * {
+                    color: var(--color-accent);
+                }
+            }
+        }
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 300px;
+    text-align: center;
+    cursor: auto;
+
+    .btn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+
+        .icon {
+            font-size: var(--font-size-h4);
+        }
+
+        &:hover {
+            > * {
+                color: var(--color-accent);
+            }
+        }
+    }
+}
+
+.image {
+    width: 100%;
+    height: 55%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        border-radius: 6px;
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        max-width: 800px;
+        height: 300px;
+        justify-content: space-between;
+    }
+
+    .container:nth-child(odd) {
+        flex-direction: row;
+    }
+
+    .container:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .content {
+        width: 45%;
+        height: 100%;
+        align-items: start;
+
+        .description {
+            text-align: start;
+        }
+    }
+
+    .image {
+        width: 55%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
