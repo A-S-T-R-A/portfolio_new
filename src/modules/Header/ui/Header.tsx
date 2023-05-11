@@ -5,14 +5,16 @@ import { Burger } from "./Burger/Burger"
 
 export function Header() {
     return (
-        <div className={styles.wrapper}>
-            <div className={styles.container}>
-                <div className={styles.logoContainer}>
-                    <img src={Art1us} className={styles.logo} alt="" />
+        <>
+            <Burger className={styles.burger} />
+            <div className={styles.wrapper}>
+                <div className={styles.container}>
+                    <div className={styles.logoContainer}>
+                        <img src={Art1us} className={styles.logo} alt="" />
+                    </div>
+                    <Navbar className={styles.navbar} />
                 </div>
-                <Navbar className={styles.navbar} />
-                <Burger className={styles.burger} />
             </div>
-        </div>
+        </>
     )
 }
