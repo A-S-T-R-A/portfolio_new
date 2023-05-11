@@ -48,7 +48,6 @@ export const technologiesData: ITechnologyItem[] = [
         img: typescriptIcon,
         desc: "Experience with TS",
     },
-
     {
         id: 6,
         title: "Node.js",
@@ -69,6 +68,30 @@ export const technologiesData: ITechnologyItem[] = [
     },
     {
         id: 8,
+        title: "CSS",
+        img: cssIcon,
+        desc: "Experience with CSS",
+    },
+    {
+        id: 9,
+        title: "Node.js",
+        img: nodeIcon,
+        desc: "Experience with Node and Databases",
+    },
+    {
+        id: 10,
+        title: "JavaScript",
+        img: jsIcon,
+        desc: "Experience with React.js",
+    },
+    {
+        id: 11,
+        title: "HTML",
+        img: htmlIcon,
+        desc: "Experience with HTML",
+    },
+    {
+        id: 12,
         title: "CSS",
         img: cssIcon,
         desc: "Experience with CSS",
