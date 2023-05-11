@@ -1,0 +1,25 @@
+.creditCardData {
+    text-align: start;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    > *:first-child {
+        grid-column: 1 /-1;
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    .icon {
+        font-size: var(--font-size-h4);
+    }
+
+    &:hover {
+        > * {
+            color: var(--color-accent);
+        }
+    }
+}
