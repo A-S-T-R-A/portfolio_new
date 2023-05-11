@@ -1,4 +1,4 @@
-import Form from "modules/Form/Form"
+import Form from "modules/Form/ui/Form"
 import { Header } from "modules/Header"
 import { Main } from "modules/Main"
 import { Projects } from "modules/Projects"
