@@ -1,4 +1,4 @@
-import Form from "modules/Form/ui/Form"
+import { Contact } from "modules/Contact"
 import { Header } from "modules/Header"
 import { Main } from "modules/Main"
 import { Projects } from "modules/Projects"
@@ -12,7 +12,7 @@ function App() {
                 <Main />
                 <Projects />
                 <Technologies />
-                <Form />
+                <Contact />
             </div>
         </div>
     )

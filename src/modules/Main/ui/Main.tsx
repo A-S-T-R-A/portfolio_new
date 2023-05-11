@@ -1,6 +1,7 @@
 import styles from "./Main.module.css"
 import Hero from "./Hero/Hero"
 import { PlanetAnimation } from "./PlanetAnimation/PlanetAnimation"
+import { ScrollIcon } from "shared/ui/ScrollIcon/ScrollIcon"
 
 const height = window.innerHeight
 
@@ -11,6 +12,7 @@ function Main() {
                 <Hero />
                 <PlanetAnimation />
             </section>
+            <ScrollIcon className={styles.icon} onClick={() => null} />
         </main>
     )
 }
