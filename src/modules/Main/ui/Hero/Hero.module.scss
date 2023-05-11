@@ -1,6 +1,8 @@
 .container {
     width: 100%;
     padding-left: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .greeting {
@@ -51,6 +53,10 @@
 }
 
 @media (max-width: 960px) {
+    .container {
+        max-width: 500px;
+    }
+
     .content {
         width: fit-content;
         padding-top: 40px;

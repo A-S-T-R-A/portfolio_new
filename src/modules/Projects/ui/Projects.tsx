@@ -7,7 +7,7 @@ export function Projects() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <Typography variant={TypographyVariant.H1} className={styles.title}>
+                <Typography variant={TypographyVariant.H1} className={styles.title} isBold>
                     My Projects
                 </Typography>
                 <div className={styles.projects}>

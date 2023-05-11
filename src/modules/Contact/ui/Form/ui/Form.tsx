@@ -2,12 +2,13 @@ import { useRef, useState, useMemo, ChangeEvent, useCallback, FormEvent } from "
 import emailjs from "@emailjs/browser"
 import { Button } from "shared/ui/Button/Button"
 import { classNames } from "shared/lib/classNames/classNames"
-import styles from "./Form.module.css"
 import AnimatedLoadingIcon from "shared/ui/AnimatedLoadingIcon/AnimatedLoadingIcon"
 import { AiOutlineCheckCircle } from "react-icons/ai"
 import { BiErrorCircle } from "react-icons/bi"
 import { EMAIL_REG_EX, NAME_REG_EX } from "../const/regex"
 import { FormStatus } from "./FormStatus/FormStatus"
+import { Typography, TypographyVariant } from "shared/ui/Typography/Typography"
+import styles from "./Form.module.scss"
 
 interface IFormData {
     name: string
@@ -120,6 +121,7 @@ export default function Form() {
                     <form onSubmit={submitHandler} className={styles.form} ref={formRef}>
                         <div className={styles.formContainer}>
                             <div className={styles.inputWrap}>
+                                <label htmlFor="nameInput">Your Name</label>
                                 <input
                                     ref={nameRef}
                                     id="nameInput"
@@ -130,40 +132,44 @@ export default function Form() {
                                     name="name"
                                     value={formData.name}
                                     onChange={e => changeHandler(e, "name")}
-                                    placeholder="Your Name"
+                                    placeholder="What's your name?"
                                 />
                                 {!!formErrors.name && (
                                     <p className={styles.error}>{formErrors.name}</p>
                                 )}
                             </div>
                             <div className={styles.inputWrap}>
+                                <label htmlFor="emailInput">Your Email</label>
                                 <input
                                     ref={emailRef}
                                     className={classNames(styles.inputs, {
                                         [styles.inpError]: !!formErrors.email,
                                     })}
+                                    id="emailInput"
                                     type="text"
                                     name="email"
                                     value={formData.email}
                                     onChange={e => changeHandler(e, "email")}
-                                    placeholder="Your Email"
+                                    placeholder="What's your email?"
                                 />
                                 {!!formErrors.email && (
                                     <p className={styles.error}>{formErrors.email}</p>
                                 )}
                             </div>
                             <div className={styles.textareaWrap}>
+                                <label htmlFor="textarea">Your Message</label>
                                 <textarea
                                     className={styles.textarea}
+                                    id="textarea"
                                     name="message"
                                     value={formData.message}
                                     onChange={e => changeHandler(e, "message")}
-                                    placeholder="Your Message"
+                                    placeholder="What's your message?"
                                 />
                             </div>
 
                             <Button className={styles.btn} type="submit">
-                                Submit
+                                Send
                             </Button>
                         </div>
                     </form>
@@ -173,8 +179,9 @@ export default function Form() {
 
     return (
         <div id="contact" className={styles.wrapper}>
-            <p>Contact me</p>
-            <p>Chat with me and see how can I help to bring your ideas to life.</p>
+            <Typography variant={TypographyVariant.H1} isBold>
+                Contact Me
+            </Typography>
             {content}
         </div>
     )
