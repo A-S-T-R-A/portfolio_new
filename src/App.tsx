@@ -1,4 +1,5 @@
 import { Contact } from "modules/Contact"
+import { Footer } from "modules/Footer"
 import { Header } from "modules/Header"
 import { Main } from "modules/Main"
 import { Projects } from "modules/Projects"
@@ -14,6 +15,7 @@ function App() {
                 <Technologies />
                 <Contact />
             </div>
+            <Footer />
         </div>
     )
 }

@@ -1,0 +1,102 @@
+.wrapper {
+    max-width: 100vw;
+    min-height: fit-content;
+    padding: 1.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    color: var(--color-base);
+}
+
+.content {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-row-gap: 50px;
+    grid-template-areas:
+        "phone email socialIcons";
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 20px;
+}
+
+.phone {
+    width: 100%;
+    grid-area: phone;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.email {
+    width: 100%;
+    grid-area: email;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkTitle {
+    font-size: var(--font-size-h4);
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.link {
+    color: var(--color-dark-gray) !important;
+    letter-spacing: 0.5px;
+    position: relative;
+    left: 0;
+    transition: all .3s ease-in-out;
+}
+
+.link:hover {
+    left: 6px;
+    color: var(--color-base);
+}
+
+.socialIcons {
+    width: 100%;
+    grid-area: socialIcons;
+    display: flex;
+    justify-content: center;
+}
+
+.icons {
+    justify-content: space-between;
+}
+
+@media (max-width: 961px) {
+    .icons {
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 651px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "phone email"
+            "socialIcons socialIcons";
+    }
+}
+
+@media (max-width: 481px) {
+    .content {
+        grid-row-gap: 20px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "phone"
+            "email"
+            "socialIcons";
+    }
+}
