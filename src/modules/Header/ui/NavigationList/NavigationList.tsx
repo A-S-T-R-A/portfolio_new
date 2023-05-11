@@ -1,9 +1,12 @@
+import { classNames } from "shared/lib/classNames/classNames"
 import { menuData } from "../../const/data"
 import styles from "./NavigationList.module.css"
 
-export function NavigationList({ closeClickHandler }: { closeClickHandler?: () => void }) {
+export function NavigationList(props: { closeClickHandler?: () => void; className?: string }) {
+    const { closeClickHandler, className } = props
+
     return (
-        <ul className={styles.list}>
+        <ul className={classNames(styles.list, {}, [className])}>
             {menuData.map(item => {
                 return (
                     <li className={styles.item} key={item.id} onClick={closeClickHandler}>

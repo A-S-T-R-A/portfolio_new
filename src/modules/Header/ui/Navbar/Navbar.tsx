@@ -1,13 +1,17 @@
-import { SocialIcons } from "shared/components/SocialIcons"
 import { NavigationList } from "../NavigationList/NavigationList"
 import { classNames } from "shared/lib/classNames/classNames"
-import styles from "./Navbar.module.css"
+import styles from "./Navbar.module.scss"
+import { Resume } from "../Resume/Resume"
 
 export function Navbar({ className }: { className?: string }) {
     return (
-        <div className={classNames(styles.navBar, {}, [className])}>
-            <NavigationList />
-            <SocialIcons />
+        <div className={classNames(styles.container, {}, [className])}>
+            <NavigationList className={styles.navList} />
+            <Resume
+                onClick={() => {
+                    return
+                }}
+            />
         </div>
     )
 }

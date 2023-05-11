@@ -1,12 +1,14 @@
 .wrapper {
     position: fixed;
-    background-color: var(--color-base-bg);
     width: 100%;
     min-height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 3;
+    background-color: #05081630;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .container {
