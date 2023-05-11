@@ -32,10 +32,6 @@ li {
     list-style: none;
 }
 
-span.accent {
-    -webkit-text-fill-color: var(--accent-color);
-}
-
 @font-face {
     font-family: "ProximaNova";
     src: url("shared/assets/fonts/ProximaNovaReg.otf") format("opentype");

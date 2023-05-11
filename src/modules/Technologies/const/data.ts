@@ -37,7 +37,7 @@ export const technologiesData: ITechnologyItem[] = [
         desc: "Experience with Next",
     },
     {
-        id: 9,
+        id: 15,
         title: "Graph QL",
         img: graphqlIcon,
         desc: "Experience with Graph QL",

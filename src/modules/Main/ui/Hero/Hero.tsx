@@ -12,7 +12,7 @@ function Hero() {
             <h1 className={styles.greeting}>
                 Hi! My name is Artur
                 <br />
-                I'm Artur
+                I'm a <span className={styles.accent}>Front End Developer</span>
             </h1>
             <p className={styles.text}>
                 My name is Artur Pazyniuk. I'm a software engineer specializing in building
@@ -21,7 +21,9 @@ function Hero() {
                 Let's make something special together.
             </p>
             <Button onClick={clickHandler} variant={ButtonVariant.CLEAR} className={styles.connect}>
-                Let’s Connect <BsArrowRightCircle className={styles.icon} />
+                <p>Let’s Connect</p>
+
+                <BsArrowRightCircle className={styles.icon} />
             </Button>
         </div>
     )
