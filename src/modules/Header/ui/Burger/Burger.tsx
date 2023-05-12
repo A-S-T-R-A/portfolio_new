@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { classNames } from "shared/lib/classNames/classNames"
 import { NavigationList } from "../NavigationList/NavigationList"
-import { SocialIcons } from "shared/components/SocialIcons"
-import styles from "./Burger.module.scss"
 import { Resume } from "../Resume/Resume"
+import styles from "./Burger.module.scss"
 
 export function Burger({ className }: { className?: string }) {
     const [isBurgerVisible, setIsBurgerVisible] = useState(false)
@@ -49,11 +48,7 @@ function BurgerModalSlider({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <div className={classNames(styles.sliderWrapper, { [styles.navOpen]: isOpen })}>
                 <div className={styles.sliderContainer}>
                     <NavigationList closeClickHandler={onClose} />
-                    <Resume
-                        onClick={() => {
-                            null
-                        }}
-                    />
+                    <Resume />
                 </div>
             </div>
         </>
