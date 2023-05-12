@@ -12,7 +12,7 @@ function Main() {
                 <Hero />
                 <PlanetAnimation />
             </section>
-            <ScrollIcon className={styles.icon} />
+            <ScrollIcon className={styles.icon} query="#projects" />
         </main>
     )
 }
