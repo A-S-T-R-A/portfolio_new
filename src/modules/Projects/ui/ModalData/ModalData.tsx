@@ -1,4 +1,4 @@
-import { Typography, TypographyColor, TypographyVariant } from "shared/ui/Typography/Typography"
+import { Typography, TypographyColor } from "shared/ui/Typography/Typography"
 import styles from "./ModalData.module.scss"
 
 export function ModalDataShop() {
