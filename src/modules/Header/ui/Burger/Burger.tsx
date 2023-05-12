@@ -9,7 +9,10 @@ export function Burger({ className }: { className?: string }) {
     const [isBurgerVisible, setIsBurgerVisible] = useState(false)
 
     function toggleBurger() {
-        setIsBurgerVisible(prev => !prev)
+        setIsBurgerVisible(prev => {
+            document.body.style.overflow = prev ? "auto" : "hidden"
+            return !prev
+        })
     }
 
     return (
