@@ -55,6 +55,10 @@ li {
     --font-size-extra-small: 12px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "ProximaNova", "serif";
     background: var(--color-base-bg);

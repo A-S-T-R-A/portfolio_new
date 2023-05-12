@@ -4,7 +4,7 @@ import { Typography, TypographyVariant } from "shared/ui/Typography/Typography"
 
 function Technologies() {
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id="technologies">
             <div className={styles.container}>
                 <Typography variant={TypographyVariant.H1} className={styles.title} isBold>
                     Technologies
