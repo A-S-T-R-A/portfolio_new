@@ -34,13 +34,13 @@ li {
 
 @font-face {
     font-family: "ProximaNova";
-    src: url("shared/assets/fonts/ProximaNovaReg.otf") format("opentype");
+    src: url("shared/assets/fonts/ProximaNovaFont.otf") format("opentype");
     font-weight: 400;
 }
 
 :root {
     --color-accent: #743ad0;
-    --color-base: white;
+    --color-base: rgb(228, 228, 228);
     --color-warning: red;
     --color-dark-gray: #978c9b;
     --color-base-bg: #050816;

@@ -1,16 +1,9 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import styles from "./ScrollIcon.module.scss"
 
-export function ScrollIcon({
-    className,
-    scrollTarget,
-}: {
-    className?: string
-    scrollTarget?: HTMLElement | null
-}) {
+export function ScrollIcon({ className }: { className?: string }) {
     function clickHandler() {
-        if (!scrollTarget) return
-        scrollTarget.scrollIntoView({ behavior: "smooth" })
+        document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
     }
 
     return (

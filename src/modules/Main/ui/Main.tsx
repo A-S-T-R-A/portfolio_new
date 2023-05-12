@@ -12,10 +12,7 @@ function Main() {
                 <Hero />
                 <PlanetAnimation />
             </section>
-            <ScrollIcon
-                className={styles.icon}
-                scrollTarget={document.getElementById("projects")}
-            />
+            <ScrollIcon className={styles.icon} />
         </main>
     )
 }
