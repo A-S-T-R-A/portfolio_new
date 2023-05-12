@@ -5,7 +5,7 @@ import { Project } from "./Project/Project"
 
 export function Projects() {
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id="projects">
             <div className={styles.container}>
                 <Typography variant={TypographyVariant.H1} className={styles.title} isBold>
                     My Projects
