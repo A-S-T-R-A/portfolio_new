@@ -117,10 +117,11 @@
 .error {
     position: absolute;
     font-size: 13px;
-    font-weight: 500;
+    letter-spacing: 0.2px;
+    font-weight: 700;
     color: var(--color-warning);
     left: 16px;
-    margin-top: 45px;
+    bottom: -16px;
 }
 
 .inpError {
