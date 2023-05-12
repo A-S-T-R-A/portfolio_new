@@ -4,7 +4,7 @@ import styles from "./Hero.module.scss"
 
 function Hero() {
     function clickHandler() {
-        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+        window.open("/cv.pdf", "_blank")
     }
 
     return (
@@ -21,8 +21,7 @@ function Hero() {
                 Let's make something special together.
             </p>
             <Button onClick={clickHandler} variant={ButtonVariant.CLEAR} className={styles.connect}>
-                <p>Let’s Connect</p>
-
+                <p>My Resume</p>
                 <BsArrowRightCircle className={styles.icon} />
             </Button>
         </div>

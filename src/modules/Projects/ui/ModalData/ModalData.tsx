@@ -4,19 +4,13 @@ import styles from "./ModalData.module.scss"
 export function ModalDataShop() {
     return (
         <>
-            <Typography color={TypographyColor.DARK_GRAY} variant={TypographyVariant.H4}>
+            <Typography color={TypographyColor.DARK_GRAY}>
                 Please use following credit card data for Stripe payment testing
             </Typography>
             <div className={styles.creditCardData}>
-                <Typography color={TypographyColor.DARK_GRAY} variant={TypographyVariant.H4}>
-                    4242 4242 4242 4242
-                </Typography>
-                <Typography color={TypographyColor.DARK_GRAY} variant={TypographyVariant.H4}>
-                    42/42
-                </Typography>
-                <Typography color={TypographyColor.DARK_GRAY} variant={TypographyVariant.H4}>
-                    424
-                </Typography>
+                <Typography color={TypographyColor.DARK_GRAY}>4242 4242 4242 4242</Typography>
+                <Typography color={TypographyColor.DARK_GRAY}>42/42</Typography>
+                <Typography color={TypographyColor.DARK_GRAY}>424</Typography>
             </div>
         </>
     )
@@ -25,16 +19,12 @@ export function ModalDataShop() {
 export function ModalDataBlog() {
     return (
         <>
-            <Typography color={TypographyColor.DARK_GRAY} variant={TypographyVariant.H4}>
+            <Typography color={TypographyColor.DARK_GRAY}>
                 Please use following data to login
             </Typography>
             <div>
-                <Typography color={TypographyColor.DARK_GRAY} variant={TypographyVariant.H4}>
-                    Login: admin123
-                </Typography>
-                <Typography color={TypographyColor.DARK_GRAY} variant={TypographyVariant.H4}>
-                    Password: admin123
-                </Typography>
+                <Typography color={TypographyColor.DARK_GRAY}>Login: admin123</Typography>
+                <Typography color={TypographyColor.DARK_GRAY}>Password: admin123</Typography>
             </div>
         </>
     )

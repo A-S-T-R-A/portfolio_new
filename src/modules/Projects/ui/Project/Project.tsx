@@ -18,21 +18,17 @@ export function Project({ data }: { data: IProjectData }) {
                     {!!ModalData && <ModalData />}
                     <a href={demo} target="_blank" rel="noreferrer" className={styles.btn}>
                         <GoLinkExternal className={styles.icon} />
-                        <Typography variant={TypographyVariant.H4}>Live Demo</Typography>
+                        <Typography>Live Demo</Typography>
                     </a>
                 </div>
             </Modal>
 
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <Typography variant={TypographyVariant.H2} className={styles.name}>
+                    <Typography variant={TypographyVariant.H3} className={styles.name}>
                         {name}
                     </Typography>
-                    <Typography
-                        color={TypographyColor.DARK_GRAY}
-                        variant={TypographyVariant.H4}
-                        className={styles.description}
-                    >
+                    <Typography color={TypographyColor.DARK_GRAY} className={styles.description}>
                         {description}
                     </Typography>
                     <div className={styles.technologies}>
@@ -40,7 +36,6 @@ export function Project({ data }: { data: IProjectData }) {
                             <Typography
                                 key={index}
                                 color={TypographyColor.DARK_GRAY}
-                                variant={TypographyVariant.H4}
                                 className={styles.technology}
                             >
                                 {item}
@@ -50,7 +45,7 @@ export function Project({ data }: { data: IProjectData }) {
                     <div className={styles.buttons}>
                         <a href={code} target="_blank" rel="noreferrer" className={styles.btn}>
                             <AiFillGithub className={styles.icon} />
-                            <Typography variant={TypographyVariant.H4}>Code</Typography>
+                            <Typography>Code</Typography>
                         </a>
                         <div
                             className={styles.btn}
@@ -63,7 +58,7 @@ export function Project({ data }: { data: IProjectData }) {
                             }}
                         >
                             <GoLinkExternal className={styles.icon} />
-                            <Typography variant={TypographyVariant.H4}>Live Demo</Typography>
+                            <Typography>Live Demo</Typography>
                         </div>
                     </div>
                 </div>
