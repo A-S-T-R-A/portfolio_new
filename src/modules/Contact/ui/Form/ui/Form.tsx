@@ -1,6 +1,6 @@
 import { useRef, useState, useMemo, ChangeEvent, useCallback, FormEvent } from "react"
 import emailjs from "@emailjs/browser"
-import { Button } from "shared/ui/Button/Button"
+import { Button, ButtonVariant } from "shared/ui/Button/Button"
 import { classNames } from "shared/lib/classNames/classNames"
 import AnimatedLoadingIcon from "shared/ui/AnimatedLoadingIcon/AnimatedLoadingIcon"
 import { AiOutlineCheckCircle } from "react-icons/ai"
@@ -168,7 +168,11 @@ export default function Form() {
                                 />
                             </div>
 
-                            <Button className={styles.btn} type="submit">
+                            <Button
+                                className={styles.btn}
+                                variant={ButtonVariant.FILLED}
+                                type="submit"
+                            >
                                 Send
                             </Button>
                         </div>
@@ -179,7 +183,7 @@ export default function Form() {
 
     return (
         <div id="contact" className={styles.wrapper}>
-            <Typography variant={TypographyVariant.H1} isBold>
+            <Typography variant={TypographyVariant.H2} isBold className={styles.title}>
                 Contact Me
             </Typography>
             {content}

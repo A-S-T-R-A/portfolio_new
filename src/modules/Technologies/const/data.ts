@@ -96,4 +96,16 @@ export const technologiesData: ITechnologyItem[] = [
         img: cssIcon,
         desc: "Experience with CSS",
     },
+    {
+        id: 13,
+        title: "Next.js",
+        img: nextIcon,
+        desc: "Experience with Next",
+    },
+    {
+        id: 115,
+        title: "Graph QL",
+        img: graphqlIcon,
+        desc: "Experience with Graph QL",
+    },
 ]

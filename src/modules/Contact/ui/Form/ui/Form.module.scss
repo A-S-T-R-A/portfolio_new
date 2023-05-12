@@ -1,8 +1,9 @@
 .wrapper {
-    padding: 20px;
+    padding: 40px 20px;
     background: var(--color-light-bg);
     border-radius: 6px;
-    width: 350px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .form {
@@ -40,6 +41,10 @@
     grid-area: input3;
 }
 
+.title {
+    margin-bottom: 30px;
+}
+
 .inputs {
     outline: none;
     width: 100%;
@@ -71,7 +76,7 @@
     border-radius: 5px;
     font-weight: 700;
     width: 70px;
-    font-size: var(--font-size-h4);
+    font-size: var(--font-size-p);
 }
 
 .inputWrap {

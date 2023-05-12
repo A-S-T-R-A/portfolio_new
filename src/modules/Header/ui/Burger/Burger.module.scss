@@ -114,10 +114,14 @@
 
 .sliderContainer {
     padding: 50px 30px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: 1fr min-content min-content;
+    row-gap: 10px;
     height: 100%;
     width: 100%;
     background: var(--color-base-bg);
+}
+
+.btn {
+    max-width: 200px;
 }
