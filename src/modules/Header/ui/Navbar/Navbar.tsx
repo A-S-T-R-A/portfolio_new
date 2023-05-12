@@ -7,11 +7,7 @@ export function Navbar({ className }: { className?: string }) {
     return (
         <div className={classNames(styles.container, {}, [className])}>
             <NavigationList className={styles.navList} />
-            <Resume
-                onClick={() => {
-                    return
-                }}
-            />
+            <Resume />
         </div>
     )
 }
