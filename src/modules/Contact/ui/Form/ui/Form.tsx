@@ -40,7 +40,7 @@ export default function Form() {
                 import.meta.env.VITE_USER_ID
             )
             .then(
-                result => {
+                () => {
                     setIsSuccess(true)
                     setTimeout(() => {
                         setIsSuccess(false)
@@ -48,7 +48,7 @@ export default function Form() {
                     setFormData(initialData)
                     setFormErrors(initialData)
                 },
-                error => {
+                () => {
                     setIsError(true)
                     setTimeout(() => {
                         setIsError(false)
