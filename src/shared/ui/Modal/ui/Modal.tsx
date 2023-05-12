@@ -9,11 +9,10 @@ interface ModalProps {
     children: ReactNode
     isOpen: boolean
     onClose: () => void
-    lazy?: boolean
 }
 
 export const Modal = (props: ModalProps) => {
-    const { className, children, isOpen, onClose, lazy } = props
+    const { className, children, isOpen, onClose } = props
     const [isOpening, setIsOpening] = useState(false)
     const [isClosing, setIsClosing] = useState(false)
     const [isMounted, setIsMounted] = useState(false)
