@@ -1,5 +1,5 @@
 import styles from "./Header.module.css"
-import Art1us from "shared/assets/images/art1us.png"
+import Art1us from "shared/assets/images/logo.webp"
 import { Navbar } from "./Navbar/Navbar"
 import { Burger } from "./Burger/Burger"
 

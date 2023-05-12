@@ -64,6 +64,7 @@ body {
     font-family: "ProximaNova", "serif";
     background: var(--color-base-bg);
     color: var(--color-base);
+    overflow-y: overlay !important;
 }
 
 body::-webkit-scrollbar-track {
