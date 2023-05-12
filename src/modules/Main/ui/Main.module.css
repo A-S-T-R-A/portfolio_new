@@ -4,7 +4,6 @@
     /* padding-top: calc(var(--navbar-height) / 2); */
     color: var(--color-base);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
