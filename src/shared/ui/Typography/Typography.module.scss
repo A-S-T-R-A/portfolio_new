@@ -1,6 +1,5 @@
 .variantH1 {
     font-size: var(--font-size-h1);
-    letter-spacing: 1px;
     color: var(--color-base);
 }
 
@@ -55,6 +54,18 @@
     &.variantSmall,
     &.variantExtraSmall {
         color: var(--color-dark-gray);
+    }
+}
+
+.lightGray {
+    &.variantH1,
+    &.variantH2,
+    &.variantH3,
+    &.variantH4,
+    &.variantP,
+    &.variantSmall,
+    &.variantExtraSmall {
+        color: var(--color-light-gray);
     }
 }
 

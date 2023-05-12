@@ -17,35 +17,31 @@ export function Project({ data }: { data: IProjectData }) {
                 <div className={styles.modal}>
                     {!!ModalData && <ModalData />}
                     <a href={demo} target="_blank" rel="noreferrer" className={styles.btn}>
-                        <GoLinkExternal className={styles.icon} />
-                        <Typography>Live Demo</Typography>
+                        <GoLinkExternal className={styles.iconDemo} />
+                        <Typography className={styles.btnText}>Live Demo</Typography>
                     </a>
                 </div>
             </Modal>
 
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <Typography variant={TypographyVariant.H3} className={styles.name}>
+                    <Typography variant={TypographyVariant.H3} isBold className={styles.name}>
                         {name}
                     </Typography>
-                    <Typography color={TypographyColor.DARK_GRAY} className={styles.description}>
+                    <Typography color={TypographyColor.LIGHT_GRAY} className={styles.description}>
                         {description}
                     </Typography>
                     <div className={styles.technologies}>
                         {technologies.map((item, index) => (
-                            <Typography
-                                key={index}
-                                color={TypographyColor.DARK_GRAY}
-                                className={styles.technology}
-                            >
+                            <Typography key={index} className={styles.technology}>
                                 {item}
                             </Typography>
                         ))}
                     </div>
                     <div className={styles.buttons}>
                         <a href={code} target="_blank" rel="noreferrer" className={styles.btn}>
-                            <AiFillGithub className={styles.icon} />
-                            <Typography>Code</Typography>
+                            <AiFillGithub className={styles.iconCode} />
+                            <Typography className={styles.btnText}>Code</Typography>
                         </a>
                         <div
                             className={styles.btn}
@@ -57,8 +53,8 @@ export function Project({ data }: { data: IProjectData }) {
                                 }
                             }}
                         >
-                            <GoLinkExternal className={styles.icon} />
-                            <Typography>Live Demo</Typography>
+                            <GoLinkExternal className={styles.iconDemo} />
+                            <Typography className={styles.btnText}>Live Demo</Typography>
                         </div>
                     </div>
                 </div>

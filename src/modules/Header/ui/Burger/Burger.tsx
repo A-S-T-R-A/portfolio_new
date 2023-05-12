@@ -3,12 +3,16 @@ import { classNames } from "shared/lib/classNames/classNames"
 import { NavigationList } from "../NavigationList/NavigationList"
 import { Resume } from "../Resume/Resume"
 import styles from "./Burger.module.scss"
+import { SocialIcons } from "shared/components/SocialIcons"
 
 export function Burger({ className }: { className?: string }) {
     const [isBurgerVisible, setIsBurgerVisible] = useState(false)
 
     function toggleBurger() {
-        setIsBurgerVisible(prev => !prev)
+        setIsBurgerVisible(prev => {
+            document.body.style.overflow = prev ? "auto" : "hidden"
+            return !prev
+        })
     }
 
     return (
@@ -48,7 +52,8 @@ function BurgerModalSlider({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <div className={classNames(styles.sliderWrapper, { [styles.navOpen]: isOpen })}>
                 <div className={styles.sliderContainer}>
                     <NavigationList closeClickHandler={onClose} />
-                    <Resume />
+                    <SocialIcons />
+                    <Resume className={styles.btn} />
                 </div>
             </div>
         </>

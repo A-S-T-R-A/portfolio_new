@@ -9,7 +9,6 @@
     max-width: fit-content;
     font-size: clamp(44px, 4vw + 5px, 62px);
     font-weight: 700;
-    letter-spacing: 0.8px;
     line-height: 1;
     display: block;
     align-items: center;
@@ -22,7 +21,7 @@
     max-width: 500px;
     color: var(--color-dark-gray);
     font-size: 18px;
-    letter-spacing: 1px;
+    letter-spacing: 0.2px;
     line-height: 1.5em;
     margin-bottom: 20px;
 }
@@ -30,7 +29,7 @@
 .connect {
     font-weight: 700;
     font-size: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     transition: 0.3s ease-in-out;
     width: fit-content;
     padding-left: 0;
