@@ -1,6 +1,8 @@
 import { ReactElement } from "react"
-import mockImg from "shared/assets/images/projectsSection/mockProject.png"
 import { ModalDataBlog, ModalDataShop } from "../ui/ModalData/ModalData"
+import shop from "shared/assets/images/projectsSection/shop.jpg"
+import blog from "shared/assets/images/projectsSection/blog.jpg"
+import chess from "shared/assets/images/projectsSection/chess.jpg"
 
 export interface IProjectData {
     id: number
@@ -16,30 +18,30 @@ export interface IProjectData {
 export const projectsData: IProjectData[] = [
     {
         id: 1,
-        name: "Project 1",
-        img: mockImg,
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`,
-        technologies: ["React", "React", "React"],
+        name: "Astra Shop",
+        img: shop,
+        description: `Fullstack ecommerce application with search, sorting, filtering, multiple languages , stripe payment integration, admin panel and many more.`,
+        technologies: ["React", "Redux", "TS", "SSAS"],
         code: "https://github.com/A-S-T-R-A/AstraShop_Front/tree/main",
         demo: "https://astra-shop.netlify.app/",
         ModalData: ModalDataShop,
     },
     {
         id: 2,
-        name: "Project 2",
-        img: mockImg,
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`,
-        technologies: ["React", "React", "React"],
+        name: "Astra Blog",
+        img: blog,
+        description: `Blog application with authorization, roles, articles, filters, sorting, pagination, profile, comments, admin panel, multiple languages and many more.`,
+        technologies: ["React", "Redux", "TS", "SSAS"],
         code: "https://github.com/A-S-T-R-A/AstraShop_Front/tree/main",
         demo: "https://astra-shop.netlify.app/",
         ModalData: ModalDataBlog,
     },
     {
         id: 3,
-        name: "Project 3",
-        img: mockImg,
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`,
-        technologies: ["React", "React", "React"],
+        name: "Chess",
+        img: chess,
+        description: `Chess application built using OOP. Included features: standard chess rules, time control, lost figures display, etc.`,
+        technologies: ["React", "TS"],
         code: "https://github.com/A-S-T-R-A/AstraShop_Front/tree/main",
         demo: "https://astra-shop.netlify.app/",
     },

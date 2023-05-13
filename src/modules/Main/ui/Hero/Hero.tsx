@@ -18,7 +18,7 @@ function Hero() {
                 My name is Artur Pazyniuk. I'm a software engineer specializing in building
                 (ocasionally designing) exceptional user experiences.
                 <br />
-                Let's make something special together.
+                My tech stack is React, Redux, TS.
             </p>
             <Button onClick={clickHandler} variant={ButtonVariant.CLEAR} className={styles.connect}>
                 <p>My Resume</p>
