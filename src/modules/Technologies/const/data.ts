@@ -38,9 +38,9 @@ export const technologiesData: ITechnologyItem[] = [
     },
     {
         id: 8,
-        title: "SCSS",
+        title: "SASS",
         img: scssIcon,
-        desc: "Experience with CSS",
+        desc: "Experience with SASS",
     },
     {
         id: 4,
