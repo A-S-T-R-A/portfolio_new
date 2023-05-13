@@ -31,10 +31,10 @@ export function ModalDataBlog() {
             </Typography>
             <div className={styles.loginData}>
                 <Typography color={TypographyColor.DARK_GRAY}>
-                    <span className={styles.title}>Login:</span> admin123
+                    <span className={styles.title}>Login:</span> admin
                 </Typography>
                 <Typography color={TypographyColor.DARK_GRAY}>
-                    <span className={styles.title}>Password:</span> admin123
+                    <span className={styles.title}>Password:</span> 123
                 </Typography>
             </div>
         </>
