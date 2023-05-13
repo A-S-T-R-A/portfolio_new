@@ -1,6 +1,5 @@
 import {
     jsIcon,
-    nodeIcon,
     reduxIcon,
     reactIcon,
     nextIcon,
