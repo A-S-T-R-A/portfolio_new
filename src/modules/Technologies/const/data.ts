@@ -68,13 +68,13 @@ export const technologiesData: ITechnologyItem[] = [
         desc: "Experience with Jest",
     },
     {
-        id: 13,
+        id: 113,
         title: "Storybook",
         img: storybookIcon,
         desc: "Experience with Storybook",
     },
     {
-        id: 13,
+        id: 213,
         title: "Loki",
         img: lokiIcon,
         desc: "Experience with Loki",
@@ -92,7 +92,7 @@ export const technologiesData: ITechnologyItem[] = [
         desc: "Experience with ESLint",
     },
     {
-        id: 15,
+        id: 115,
         title: "Stylelint",
         img: stylelintIcon,
         desc: "Experience with Stylelint",
