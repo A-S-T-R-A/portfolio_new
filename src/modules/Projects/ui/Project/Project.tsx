@@ -49,7 +49,7 @@ export function Project({ data }: { data: IProjectData }) {
                                 if (ModalData) {
                                     setIsOpen(true)
                                 } else {
-                                    window.open("your-new-url", "_blank")
+                                    window.open(demo, "_blank")
                                 }
                             }}
                         >
