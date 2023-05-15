@@ -7,6 +7,7 @@ export default defineConfig({
     resolve: {
         alias: {
             src: "/src",
+            canvas: "/src/canvas",
             modules: "/src/modules",
             const: "/src/const",
             shared: "/src/shared",
