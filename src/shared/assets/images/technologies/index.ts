@@ -4,24 +4,23 @@ import sassIcon from "./sass.png"
 import reactIcon from "./react.png"
 import figmaIcon from "./figma.png"
 import cssIcon from "./css.png"
+import scssIcon from "./sass.png"
 import gitIcon from "./git.png"
 import typescriptIcon from "./typescript.png"
 import htmlIcon from "./html.png"
-import graphqlIcon from "./graphql.png"
 import reduxIcon from "./redux.png"
 import nextIcon from "./next.png"
-import Logo from "./logo.webp"
-
-import about01Img from "./about01.png"
-import about02Img from "./about02.png"
-import about03Img from "./about03.png"
-import about04Img from "./about04.png"
+import i18nIcon from "./i18n.png"
+import jestIcon from "./jest.png"
+import storybookIcon from "./storybook.png"
+import lokiIcon from "./loki.png"
+import webpackIcon from "./webpack.png"
+import eslintIcon from "./eslint.png"
+import stylelintIcon from "./stylelint.png"
 
 export {
-    Logo,
     jsIcon,
     nodeIcon,
-    graphqlIcon,
     sassIcon,
     reactIcon,
     gitIcon,
@@ -31,8 +30,12 @@ export {
     htmlIcon,
     reduxIcon,
     typescriptIcon,
-    about01Img,
-    about02Img,
-    about03Img,
-    about04Img,
+    scssIcon,
+    i18nIcon,
+    jestIcon,
+    storybookIcon,
+    lokiIcon,
+    webpackIcon,
+    eslintIcon,
+    stylelintIcon,
 }
