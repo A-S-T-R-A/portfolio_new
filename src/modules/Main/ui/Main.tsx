@@ -1,6 +1,5 @@
 import styles from "./Main.module.css"
 import Hero from "./Hero/Hero"
-import { DeathStarCanvas } from "canvas/index"
 /* import { PlanetAnimation } from "./PlanetAnimation/PlanetAnimation" */
 import { ScrollIcon } from "shared/ui/ScrollIcon/ScrollIcon"
 
@@ -11,7 +10,7 @@ function Main() {
         <main className={styles.wrapper} id="home" style={{ minHeight: `${height}px` }}>
             <section className={styles.container}>
                 <Hero />
-                <DeathStarCanvas />
+                <div className={styles.placeholder} />
             </section>
             <ScrollIcon className={styles.icon} query="#projects" />
         </main>

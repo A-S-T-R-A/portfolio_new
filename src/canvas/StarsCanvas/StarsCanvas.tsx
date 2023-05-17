@@ -1,4 +1,4 @@
-import * as THREE from "three"
+/* import * as THREE from "three"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { useState } from "react"
 import styles from "./StarsCanvas.module.scss"
@@ -89,3 +89,4 @@ export function StarsCanvas() {
         </div>
     )
 }
+ */

@@ -1,4 +1,4 @@
-import { StarsCanvas } from "canvas/index"
+import { DeathStarCanvas } from "canvas"
 import { Contact } from "modules/Contact"
 import { Footer } from "modules/Footer"
 import { Header } from "modules/Header"
@@ -11,7 +11,7 @@ function App() {
     return (
         <div>
             <Header />
-            <StarsCanvas />
+            <DeathStarCanvas />
             <div>
                 <Main />
                 <Projects />
