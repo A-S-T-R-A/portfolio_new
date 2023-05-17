@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import { useEffect, useRef, useState } from "react"
 import { Canvas, Vector3, useFrame, useThree } from "@react-three/fiber"
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei"
+import { Preload, useGLTF } from "@react-three/drei"
 import styles from "./DeathStarCanvas.module.scss"
 import { Trajectory } from "./Trajectory"
 
