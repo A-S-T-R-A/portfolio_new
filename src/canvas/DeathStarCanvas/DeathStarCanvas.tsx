@@ -153,7 +153,7 @@ export function DeathStarCanvas() {
                     position: [0, 0, 400],
                 }}
             >
-                <directionalLight position={[-20, 20, 10]} color={0xffffff} intensity={4} />
+                <directionalLight position={[-200, 200, 10]} color={0xffffff} intensity={3} />
                 <DeathStar />
                 <Stars />
                 <Preload all />
