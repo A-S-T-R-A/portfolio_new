@@ -1,9 +1,11 @@
 import * as THREE from "three"
 import { useEffect, useRef, useState } from "react"
-import { Canvas, Vector3, useFrame, useThree } from "@react-three/fiber"
+import { Canvas, useFrame } from "@react-three/fiber"
 import { Preload, useGLTF } from "@react-three/drei"
 import styles from "./DeathStarCanvas.module.scss"
 import { Trajectory } from "./Trajectory"
+import { getCurrentDevice } from "./getCurrentDevice"
+import { getTrajectoryData } from "./data"
 
 function Stars() {
     const [cont, setCont] = useState<THREE.InstancedMesh | null>(null)
@@ -73,77 +75,65 @@ function Stars() {
 }
 
 function DeathStar() {
+    const HEIGHT = document.body.clientHeight - window.innerHeight
+
+    const [isInited, setIsInited] = useState(false)
+    const [_, setForceRender] = useState(0)
+    const [device, setDevice] = useState(() => getCurrentDevice(window.innerWidth))
+
     const deathStar = useGLTF("./death_star/scene.gltf")
     const sphereRef = useRef<THREE.Group>(null)
-    const [position, setPosition] = useState<Vector3 | undefined>()
-    const [scale, setScale] = useState(0)
-    //let scrollPosRef = useRef(0)
-    const trajectoryRef = useRef(
-        new Trajectory(document.body.clientHeight - window.innerHeight, 20, 0)
-    )
-    //const directionXRef = useRef(1)
-
-    useEffect(() => {
-        if (window.innerWidth < 481) {
-            setPosition([0, 20, 0])
-            setScale(0.4)
-        } else if (window.innerWidth < 768) {
-            setPosition([0, 20, 0])
-            setScale(0.5)
-        } else if (window.innerWidth < 961) {
-            setPosition([0, 20, 0])
-            setScale(0.6)
-        } else if (window.innerWidth < 1200) {
-            setPosition([40, 0, 0])
-            setScale(0.6)
-        } else if (window.innerWidth > 1200) {
-            setPosition([60, 0, -50])
-            setScale(0.8)
-        }
-
-        trajectoryRef.current.buildTrajectory()
-    }, [])
-
-    const { camera, size } = useThree()
+    const trajectoryRef = useRef<Trajectory | null>(getTrajectoryData(device, HEIGHT))
+    const directionXRef = useRef(1)
 
     function handleScroll() {
-        if (!sphereRef.current) return
+        if (!sphereRef.current || !trajectoryRef.current) return
         const t = document.body.getBoundingClientRect().top
+        sphereRef.current.position.set(...trajectoryRef.current.getCoordinates(t))
+    }
 
-        sphereRef.current.position.x = trajectoryRef.current.getX(t)
-        sphereRef.current.position.y = t * 0.01
-
-        const pixelPosition = sphereRef.current.position
-            .clone() // Create a clone of the position vector
-            .project(camera) // Project the position to normalized device coordinates (NDC)
-            .unproject(camera) // Unproject the NDC coordinates back to world coordinates
-            .multiplyScalar(size.width / 2) // Scale the coordinates based on the renderer size
-            .add(new THREE.Vector3(size.width / 2, size.height / 2, 0)) // Offset the coordinates to the center of the screen
-
-        console.log(pixelPosition.x, pixelPosition.y)
-
-        //console.log(sphereRef.current.position.clone().project(camera))
-        // console.log(sphereRef.current.position)
-        // console.log(t)
+    function handleResize() {
+        setDevice(getCurrentDevice(window.innerWidth))
     }
 
     useEffect(() => {
+        setIsInited(true)
+        if (!isInited) return
+
+        const HEIGHT = document.body.clientHeight - window.innerHeight
+        trajectoryRef.current = getTrajectoryData(device, HEIGHT)
+        trajectoryRef.current?.buildTrajectory()
+        setForceRender(prev => prev + 1)
+    }, [device])
+
+    useEffect(() => {
         window.addEventListener("scroll", handleScroll)
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+            window.removeEventListener("resize", handleResize)
+        }
     }, [])
 
-    // useFrame(() => {
-    //     if (!sphereRef.current) return
-    //     sphereRef.current.rotation.x += 0.0002 * directionXRef.current
-    //     if (sphereRef.current.rotation.x >= Math.PI / 20) {
-    //         directionXRef.current = -1
-    //     } else if (sphereRef.current.rotation.x <= -Math.PI / 20) {
-    //         directionXRef.current = 1
-    //     }
-    //     sphereRef.current.rotation.y += 0.001
-    // })
+    useFrame(() => {
+        if (!sphereRef.current) return
+        sphereRef.current.rotation.x += 0.0002 * directionXRef.current
+        if (sphereRef.current.rotation.x >= Math.PI / 20) {
+            directionXRef.current = -1
+        } else if (sphereRef.current.rotation.x <= -Math.PI / 20) {
+            directionXRef.current = 1
+        }
+        sphereRef.current.rotation.y += 0.001
+    })
 
     return (
-        <group ref={sphereRef} scale={scale} position={position} rotation-x={0}>
+        <group
+            ref={sphereRef}
+            scale={trajectoryRef.current?.getInitialScale() || 1}
+            position={trajectoryRef.current?.getInitialCoordinates() || [0, 0, 0]}
+            rotation-x={0}
+        >
             <primitive object={deathStar.scene} />
         </group>
     )
