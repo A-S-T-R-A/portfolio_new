@@ -5,7 +5,7 @@ import { Preload, useGLTF } from "@react-three/drei"
 import styles from "./DeathStarCanvas.module.scss"
 import { Trajectory } from "./Trajectory"
 import { getCurrentDevice } from "./getCurrentDevice"
-import { getTrajectoryData } from "./data"
+import { getTrajectoryData } from "./getTrajectoryData"
 
 function Stars() {
     const [cont, setCont] = useState<THREE.InstancedMesh | null>(null)
