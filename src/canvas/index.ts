@@ -1,5 +1,4 @@
-import { DeathStarCanvas } from "./DeathStarCanvas/DeathStarCanvas"
-/* import { StarsCanvas } from "./StarsCanvas/StarsCanvas" */
+import { ThreeCanvas } from "./DeathStarCanvas/ThreeCanvas"
 import { Loader } from "@react-three/drei"
 
-export { DeathStarCanvas, Loader }
+export { ThreeCanvas, Loader }
