@@ -1,4 +1,4 @@
-import { ThreeCanvas } from "canvas"
+import { Canvas } from "modules/Canvas"
 import { Contact } from "modules/Contact"
 import { Footer } from "modules/Footer"
 import { Header } from "modules/Header"
@@ -11,7 +11,7 @@ function App() {
     return (
         <div>
             <Header />
-            <ThreeCanvas />
+            <Canvas />
             <div>
                 <Main />
                 <Projects />

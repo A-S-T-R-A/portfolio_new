@@ -1,11 +1,8 @@
 import { useRef } from "react"
 import { useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
-import { Vector3 } from "three"
 import { getRotation } from "./lib/getRotation"
 import { getMoveCoef } from "./lib/getMoveCoef"
-
-const toRad = (n: number) => (n * 3.1415) / 180
 
 export function Destroyer() {
     const destroyer = useGLTF("./destroyer/scene.gltf")
@@ -17,7 +14,7 @@ export function Destroyer() {
 
     const coefRef = useRef(getMoveCoef(position, destination))
 
-    useFrame(() => {
+    /* useFrame(() => {
         if (!coefRef.current || !destroyerRef.current) return
         const speed = 0
         const {
@@ -36,7 +33,7 @@ export function Destroyer() {
         destroyerRef.current.position.x += ineqX ? 0 : speed * dx
         destroyerRef.current.position.y += ineqY ? 0 : speed * dy
         destroyerRef.current.position.z += ineqZ ? 0 : speed * dz
-    })
+    }) */
 
     return (
         <group ref={destroyerRef} scale={1} position={position} rotation={rotation}>

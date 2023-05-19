@@ -8,7 +8,6 @@ export function Sun() {
 
     useFrame(() => {
         if (!sunRef.current) return
-
         sunRef.current.rotation.y += 0.000345
     })
 

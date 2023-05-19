@@ -1,4 +1,5 @@
-type Position = [number, number, number]
+import { Position } from "../../../../types/types"
+import { atan2, sqrt } from "../../../../lib/math/basics"
 
 function getVector(a: Position, b: Position) {
     const [x1, y1, z1] = a
@@ -8,8 +9,6 @@ function getVector(a: Position, b: Position) {
 }
 
 function calculateVector(vector: number[]) {
-    const { atan2, sqrt } = Math
-
     const [x, y, z] = vector
     const magnitude = sqrt(x ** 2 + y ** 2 + z ** 2)
     const direction = [x / magnitude, y / magnitude, z / magnitude]
