@@ -1,14 +1,15 @@
 import * as THREE from "three"
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Preload, useHelper } from "@react-three/drei"
+import { OrbitControls, PerspectiveCamera, Preload, useHelper, useScroll } from "@react-three/drei"
 import { Stars } from "./models/Stars/Stars"
 import { DeathStar } from "./models/DeathStar/DeathStar"
 import styles from "./ThreeCanvas.module.scss"
 import { Sun } from "./models/Sun/Sun"
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { DirectionalLight, DirectionalLightHelper } from "three"
 import { useControls } from "leva"
 import { Destroyer } from "./models/Destroyer/Destroyer"
+import { getMoveCoef } from "./models/Destroyer/lib/getMoveCoef"
 
 function Light({ isTest }: { isTest?: boolean }) {
     const lightRef = useRef<THREE.DirectionalLight>(null!)
@@ -48,28 +49,52 @@ function Light({ isTest }: { isTest?: boolean }) {
 }
 
 export function ThreeCanvas() {
+    const cameraRef = useRef(null)
+    const startPosition = [0, 0, 400]
+    const endPosition = [-2, -10, 400]
+
+    const { vector } = getMoveCoef(startPosition, endPosition)
+
+    function scrollHandler() {
+        if (!cameraRef.current) return
+        const [dx, dy, dz] = vector
+        const t = document.body.getBoundingClientRect().top
+        const deltaScroll = document.body.clientHeight - window.innerHeight
+        if (dx !== 0) cameraRef.current.position.x = (-t / deltaScroll) * dx
+        if (dy !== 0) cameraRef.current.position.y = (-t / deltaScroll) * dy
+        if (dz !== 0) cameraRef.current.position.z = (-t / deltaScroll) * dz
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", scrollHandler)
+
+        return () => window.removeEventListener("scroll", scrollHandler)
+    }, [])
+
     return (
         <div className={styles.deathStar}>
             <Canvas
                 frameloop="always"
                 dpr={window.devicePixelRatio}
                 gl={{ preserveDrawingBuffer: true }}
-                camera={{
-                    fov: 20,
-                    near: 0.1,
-                    far: 2500,
-                    position: [0, 0, 400],
-                }}
             >
-                {/* <gridHelper args={[1000, 100]} />
-                <axesHelper args={[100]} /> */}
-                {/* <OrbitControls enabled /> */}
+                <PerspectiveCamera
+                    ref={cameraRef}
+                    makeDefault
+                    far={2500}
+                    near={0.1}
+                    fov={20}
+                    position={startPosition}
+                />
+                {/* <gridHelper args={[1000, 100]} /> */}
+                {/*  <axesHelper args={[100]} /> */}
+                <OrbitControls enabled enableZoom={true} />
                 <Light />
                 {/* <Light isTest /> */}
                 <DeathStar />
                 <Destroyer />
                 <Sun />
-                <Stars />
+                {/*  <Stars /> */}
                 <Preload all />
             </Canvas>
         </div>

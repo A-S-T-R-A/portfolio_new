@@ -22,6 +22,6 @@ function calculateVector(vector: number[]) {
 export function getRotation(position: Position, target: Position) {
     const vector = getVector(position, target)
     const { azimuth, elevation } = calculateVector(vector)
-    console.log(elevation)
+
     return [0, -azimuth, elevation]
 }

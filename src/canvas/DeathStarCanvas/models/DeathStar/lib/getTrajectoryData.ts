@@ -12,7 +12,7 @@ export function getTrajectoryData(device: DeviceSize, height: number): Trajector
         case "1200":
             return new Trajectory(height, 100, [60, 0, 0], 0.6)
         case "1201+":
-            return new Trajectory(height, 100, [400, 0, -1100], 0.8)
+            return new Trajectory(height, 100, [400, 0, -1100], 0.5)
         default:
             return new Trajectory(height, 100, [60, 0, 0], 0.8)
     }

@@ -18,9 +18,9 @@ export function DeathStar() {
     const directionXRef = useRef(1)
 
     function handleScroll() {
-        if (!sphereRef.current || !trajectoryRef.current) return
+        /* if (!sphereRef.current || !trajectoryRef.current) return
         const t = document.body.getBoundingClientRect().top
-        sphereRef.current.position.set(...trajectoryRef.current.getCoordinates(t))
+        sphereRef.current.position.set(...trajectoryRef.current.getCoordinates(t)) */
     }
 
     function handleResize() {

@@ -13,7 +13,7 @@ export function Sun() {
     })
 
     return (
-        <group ref={sunRef} scale={1} position={[-23, 0, 350]} rotation-x={0}>
+        <group ref={sunRef} scale={10} position={[-200, 0, 0]} rotation-x={0}>
             <primitive object={sun.scene} />
         </group>
     )

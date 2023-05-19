@@ -11,15 +11,15 @@ export function Destroyer() {
     const destroyer = useGLTF("./destroyer/scene.gltf")
     const destroyerRef = useRef<THREE.Group>(null)
 
-    const position = [180, -10, -450]
-    const destination = [-15, 5, 450]
+    const position = [10, 0, 350] // [180, -10, -450]
+    const destination = [-15, -5, 450]
     const rotation = getRotation(position, destination)
 
     const coefRef = useRef(getMoveCoef(position, destination))
 
     useFrame(() => {
         if (!coefRef.current || !destroyerRef.current) return
-        const speed = 0.8
+        const speed = 0
         const {
             direction: [dx, dy, dz],
             limits: [lx, ly, lz],
