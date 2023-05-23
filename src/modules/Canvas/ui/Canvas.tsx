@@ -1,12 +1,13 @@
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Preload } from "@react-three/drei"
 import { DeathStar } from "./models/DeathStar/DeathStar"
-import styles from "./Canvas.module.scss"
 import { Sun } from "./models/Sun/Sun"
 import { useControls } from "leva"
-import { Destroyer } from "./models/Destroyer/Destroyer"
 import { Camera } from "./camera/Camera"
 import { Light } from "./light/Light"
+import { Stars } from "./models/Stars/Stars"
+import { Destroyers } from "./models/Destroyers/Destroyers"
+import styles from "./Canvas.module.scss"
 
 export function SceneCanvas() {
     return (
@@ -22,8 +23,8 @@ export function SceneCanvas() {
                 <OrbitControls enabled enableZoom={true} />
                 <Light />
                 {/* <Light isTest /> */}
-                <DeathStar />
-                <Destroyer />
+                {/* <DeathStar /> */}
+                <Destroyers />
                 <Sun />
                 <Preload all />
             </Canvas>

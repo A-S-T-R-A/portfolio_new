@@ -1,9 +1,8 @@
 import { PerspectiveCamera } from "@react-three/drei"
 import { useEffect, useRef } from "react"
-import { getMoveCoef } from "../models/Destroyer/lib/getMoveCoef"
 
 export function Camera() {
-    const cameraRef = useRef(null)
+    /* const cameraRef = useRef(null)
     const startPosition = [0, 0, 400]
     const endPosition = [-2, -10, 400]
 
@@ -23,16 +22,7 @@ export function Camera() {
         window.addEventListener("scroll", scrollHandler)
 
         return () => window.removeEventListener("scroll", scrollHandler)
-    }, [])
+    }, []) */
 
-    return (
-        <PerspectiveCamera
-            ref={cameraRef}
-            makeDefault
-            far={2500}
-            near={0.1}
-            fov={20}
-            position={startPosition}
-        />
-    )
+    return <PerspectiveCamera makeDefault far={2500} near={0.1} fov={20} position={[0, 0, 400]} />
 }
