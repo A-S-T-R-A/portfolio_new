@@ -8,6 +8,7 @@ import { Light } from "./light/Light"
 import { Stars } from "./models/Stars/Stars"
 import { Destroyers } from "./models/Destroyers/Destroyers"
 import styles from "./Canvas.module.scss"
+import { Fighters } from "./models/Fighters/Fighters"
 
 export function SceneCanvas() {
     return (
@@ -19,12 +20,13 @@ export function SceneCanvas() {
             >
                 <Camera />
                 {/* <gridHelper args={[1000, 100]} /> */}
-                {/*  <axesHelper args={[100]} /> */}
+                {/* <axesHelper args={[100]} /> */}
                 <OrbitControls enabled enableZoom={true} />
                 <Light />
                 {/* <Light isTest /> */}
                 {/* <DeathStar /> */}
                 <Destroyers />
+                <Fighters />
                 <Sun />
                 <Preload all />
             </Canvas>

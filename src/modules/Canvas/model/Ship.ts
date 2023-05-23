@@ -67,9 +67,9 @@ export class Ship {
         const [lx, ly, lz] = this.target
         const [vx, vy, vz] = this.vector
 
-        const reachedX = vx > 0 ? currentX > lx : currentX < lx
-        const reachedY = vy > 0 ? currentY > ly : currentY < ly
-        const reachedZ = vz > 0 ? currentZ > lz : currentZ < lz
+        const reachedX = vx > 0 ? currentX >= lx : currentX <= lx
+        const reachedY = vy > 0 ? currentY >= ly : currentY <= ly
+        const reachedZ = vz > 0 ? currentZ >= lz : currentZ <= lz
 
         const x = reachedX ? currentX : dx * this.speed + currentX
         const y = reachedY ? currentY : dy * this.speed + currentY

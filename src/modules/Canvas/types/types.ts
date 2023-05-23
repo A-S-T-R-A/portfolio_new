@@ -11,5 +11,6 @@ export type Ref = THREE.Group
 
 export interface IShipData {
     id?: number
+    type?: "bombers" | "fighters"
     journey: Journey
 }
