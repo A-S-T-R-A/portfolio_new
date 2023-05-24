@@ -133,4 +133,4 @@ export function BomberScene(props: JSX.IntrinsicElements["group"]) {
     )
 }
 
-useGLTF.preload("/scene.gltf")
+//useGLTF.preload("/scene.gltf")

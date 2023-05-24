@@ -97,4 +97,4 @@ export function FighterScene(props: IFighterScene) {
     )
 }
 
-useGLTF.preload("/scene.gltf")
+//useGLTF.preload("/scene.gltf")
