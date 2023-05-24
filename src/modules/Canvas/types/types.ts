@@ -14,3 +14,10 @@ export interface IShipData {
     type?: "bombers" | "fighters"
     journey: Journey
 }
+
+export interface IShipsManeuvering {
+    inertia: number
+    rateOfTurn: number
+    maxSpeed: number
+    turnDeceleration: number
+}

@@ -1,18 +1,18 @@
 import { useFrame } from "@react-three/fiber"
 import { Journey, Rotation } from "../../../../types/types"
 import { useRef } from "react"
-import { Ship } from "../../../../model/Ship"
 import { FighterScene } from "./FighterScene"
 import { PI } from "../../../../lib/math/basics"
+import { FighterClass } from "../../../../model/FighterClass"
 
-interface IDestroyer {
+interface IFighter {
     journey: Journey
 }
 
-export function Fighter(props: IDestroyer) {
+export function Fighter(props: IFighter) {
     const { journey } = props
     const fighterRef = useRef<THREE.Group>(null)
-    const classRef = useRef(new Ship(journey))
+    const classRef = useRef(new FighterClass(journey))
     const { position, rotation } = classRef.current.getInitialData()
 
     function changeAxes(r: Rotation): Rotation {
@@ -22,11 +22,11 @@ export function Fighter(props: IDestroyer) {
     }
 
     useFrame(() => {
-        if (!fighterRef.current) return
-        const psn = classRef.current.move(fighterRef.current.position)
-        const rotation = classRef.current.getInitialData().rotation
-        fighterRef.current.position.set(...psn)
-        fighterRef.current.rotation.set(...changeAxes(rotation))
+        const { speed, isReachedEnd } = classRef.current
+        if (!fighterRef.current || isReachedEnd || speed === 0) return
+        const { position, rotation } = classRef.current.move(fighterRef.current.position)
+        fighterRef.current.position.set(...position)
+        rotation && fighterRef.current.rotation.set(...changeAxes(rotation))
     })
 
     return (
