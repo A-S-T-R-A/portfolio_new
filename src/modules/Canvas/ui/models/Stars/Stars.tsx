@@ -1,7 +1,6 @@
 import * as THREE from "three"
-import { useFrame, useLoader } from "@react-three/fiber"
+import { useFrame } from "@react-three/fiber"
 import { useState } from "react"
-import { useGLTF } from "@react-three/drei"
 
 export function Stars() {
     const [cont, setCont] = useState<THREE.InstancedMesh | null>(null)
