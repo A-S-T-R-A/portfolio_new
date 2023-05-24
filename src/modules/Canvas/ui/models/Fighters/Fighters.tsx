@@ -8,6 +8,7 @@ export function Fighters() {
             {fightersSquadrons.map(item => {
                 const { id, journey, type } = item
                 if (type === "bombers") {
+                    // @ts-ignore
                     return <BombersSquadron key={id} journey={journey} />
                 }
                 if (type === "fighters") {
@@ -46,11 +47,13 @@ export function FightersSquadron(props: ISquadron) {
         const arr = journey.map(item => {
             const newItem = [...item]
 
+            // @ts-ignore
             newItem[0] = offsetCoordinates(newItem[0])
             console.log(newItem[0])
             return newItem
         })
 
+        // @ts-ignore
         return arr
     }
 
@@ -65,6 +68,6 @@ export function FightersSquadron(props: ISquadron) {
     )
 }
 
-export function BombersSquadron(props: ISquadron) {
+export function BombersSquadron(/* props: ISquadron */) {
     return <></>
 }

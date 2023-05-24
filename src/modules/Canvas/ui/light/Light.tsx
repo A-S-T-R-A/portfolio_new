@@ -15,7 +15,7 @@ export function Light({ isTest }: { isTest?: boolean }) {
         z2: { value: 450, min: -5000, max: 5000 },
     }) */
 
-    if (isTest) {
+    /*   if (isTest) {
         return (
             <directionalLight
                 target-position={[x2, y2, z2]}
@@ -25,7 +25,9 @@ export function Light({ isTest }: { isTest?: boolean }) {
                 intensity={0}
             />
         )
-    }
+    } */
+
+    if (isTest) return null
 
     return (
         <directionalLight

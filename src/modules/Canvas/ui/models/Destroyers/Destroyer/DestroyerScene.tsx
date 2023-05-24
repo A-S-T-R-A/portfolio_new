@@ -1,5 +1,5 @@
 import { useGLTF } from "@react-three/drei"
-import { Position, Ref, Rotation, Scale } from "../../../../types/types"
+import { Position, Rotation, Scale } from "../../../../types/types"
 import { GLTF } from "three-stdlib"
 
 interface IDestroyerScene {

@@ -1,5 +1,4 @@
 import { PerspectiveCamera } from "@react-three/drei"
-import { useEffect, useRef } from "react"
 
 export function Camera() {
     /* const cameraRef = useRef(null)
