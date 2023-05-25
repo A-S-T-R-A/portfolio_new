@@ -20,7 +20,7 @@ export function SceneCanvas() {
             >
                 <Camera />
                 {/* <gridHelper args={[1000, 100]} /> */}
-                <axesHelper args={[100]} />
+                {/* <axesHelper args={[100]} /> */}
                 <OrbitControls enabled enableZoom={true} />
                 <Light />
                 {/* <Light isTest /> */}

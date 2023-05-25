@@ -47,13 +47,16 @@ export function Destroyer(props: IDestroyer) {
                 position={position}
                 rotation={alignToX(rotation)}
             />
-            {Array(totalShuttles)
+            {/* {Array(totalShuttles)
                 .fill("")
                 .map((_, i) => {
                     console.log(i, shuttlesJourney[i])
                     // @ts-ignore
                     return shuttlesJourney[i] ? <Shuttle journey={shuttlesJourney[i]} /> : null
-                })}
+                })} */}
+
+            {shuttlesJourney[0] ? <Shuttle journey={shuttlesJourney[0]} /> : null}
+            {shuttlesJourney[1] ? <Shuttle journey={shuttlesJourney[1]} /> : null}
         </>
     )
 }
