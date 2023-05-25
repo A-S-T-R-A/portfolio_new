@@ -54,8 +54,9 @@ export function Destroyer(props: IDestroyer) {
                     // @ts-ignore
                     return shuttlesJourney[i] ? <Shuttle journey={shuttlesJourney[i]} /> : null
                 })} */}
-
+            {/* @ts-ignore */}
             {shuttlesJourney[0] ? <Shuttle journey={shuttlesJourney[0]} /> : null}
+            {/* @ts-ignore */}
             {shuttlesJourney[1] ? <Shuttle journey={shuttlesJourney[1]} /> : null}
         </>
     )
