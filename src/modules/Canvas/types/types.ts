@@ -15,6 +15,10 @@ export interface IShipData {
     journey: Journey
 }
 
+export interface IDestroyersData extends IShipData {
+    shuttles?: IShipData[]
+}
+
 export interface IShipsManeuvering {
     inertia: number
     rateOfTurn: number

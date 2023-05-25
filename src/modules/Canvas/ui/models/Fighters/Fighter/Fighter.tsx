@@ -24,11 +24,6 @@ export function Fighter(props: IFighter) {
     })
 
     return (
-        <FighterScene
-            fighterRef={fighterRef}
-            scale={1}
-            position={position}
-            rotation={alignToX(rotation)}
-        />
+        <FighterScene fighterRef={fighterRef} position={position} rotation={alignToX(rotation)} />
     )
 }

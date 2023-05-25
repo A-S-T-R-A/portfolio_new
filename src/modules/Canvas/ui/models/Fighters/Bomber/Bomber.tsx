@@ -23,12 +23,5 @@ export function Bomber(props: IFighter) {
         rotation && bomberRef.current.rotation.set(...alignToX(rotation))
     })
 
-    return (
-        <BomberScene
-            bomberRef={bomberRef}
-            scale={1}
-            position={position}
-            rotation={alignToX(rotation)}
-        />
-    )
+    return <BomberScene bomberRef={bomberRef} position={position} rotation={alignToX(rotation)} />
 }

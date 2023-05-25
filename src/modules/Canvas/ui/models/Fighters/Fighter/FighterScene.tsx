@@ -1,7 +1,8 @@
 import * as THREE from "three"
 import { useGLTF } from "@react-three/drei"
 import { GLTF } from "three-stdlib"
-import { Position, Rotation, Scale } from "../../../../types/types"
+import { Position, Rotation } from "../../../../types/types"
+import { FIGHTER_SIZE } from "../../../../const/sizes"
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -34,18 +35,17 @@ interface IFighterScene {
     fighterRef: any
     position: Position
     rotation: Rotation
-    scale: Scale
 }
 
 export function FighterScene(props: IFighterScene) {
-    const { fighterRef, position, rotation, scale } = props
+    const { fighterRef, position, rotation } = props
     const { nodes, materials } = useGLTF("/fighter/scene.gltf") as GLTFResult
     return (
         <group
             ref={fighterRef}
             position={position}
             rotation={rotation}
-            scale={scale}
+            scale={FIGHTER_SIZE}
             dispose={null}
         >
             <group scale={0.01}>

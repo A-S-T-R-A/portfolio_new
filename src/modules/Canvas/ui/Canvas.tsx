@@ -25,6 +25,7 @@ export function SceneCanvas() {
                 <Light />
                 {/* <Light isTest /> */}
                 {/* <DeathStar /> */}
+                {/* <Shuttle /> */}
                 <Destroyers />
                 <Fighters />
                 <Sun />

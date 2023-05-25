@@ -1,12 +1,12 @@
 import { useGLTF } from "@react-three/drei"
-import { Position, Rotation, Scale } from "../../../../types/types"
+import { Position, Rotation } from "../../../../types/types"
 import { GLTF } from "three-stdlib"
+import { DESTROYER_SIZE } from "../../../../const/sizes"
 
 interface IDestroyerScene {
     destroyerRef: any
     position: Position
     rotation: Rotation
-    scale: Scale
 }
 
 type GLTFResult = GLTF & {
@@ -93,18 +93,18 @@ type GLTFResult = GLTF & {
 }
 
 export function DestroyerScene(props: IDestroyerScene) {
-    const { destroyerRef, position, rotation, scale } = props
+    const { destroyerRef, position, rotation } = props
     const { nodes, materials } = useGLTF("./destroyer/scene.gltf") as GLTFResult
 
     return (
         <group
             ref={destroyerRef}
-            scale={scale}
+            scale={DESTROYER_SIZE}
             position={position}
             rotation={rotation}
             dispose={null}
         >
-            <group rotation={[0, -Math.PI / 2, 0]}>
+            <group rotation={[0, -Math.PI / 2, 0]} position={[0, 0, -1.5]}>
                 <mesh geometry={nodes.Object_4.geometry} material={materials.Body} />
                 <mesh
                     geometry={nodes.Object_6.geometry}

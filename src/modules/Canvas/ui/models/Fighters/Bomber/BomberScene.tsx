@@ -1,7 +1,8 @@
 import * as THREE from "three"
 import { useGLTF } from "@react-three/drei"
 import { GLTF } from "three-stdlib"
-import { Position, Rotation, Scale } from "../../../../types/types"
+import { Position, Rotation } from "../../../../types/types"
+import { BOMBER_SIZE } from "../../../../const/sizes"
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -42,14 +43,19 @@ interface IBomberScene {
     bomberRef: any
     position: Position
     rotation: Rotation
-    scale: Scale
 }
 
 export function BomberScene(props: IBomberScene) {
-    const { bomberRef, position, rotation, scale } = props
+    const { bomberRef, position, rotation } = props
     const { nodes, materials } = useGLTF("/bomber/scene.gltf") as GLTFResult
     return (
-        <group ref={bomberRef} position={position} rotation={rotation} scale={scale} dispose={null}>
+        <group
+            ref={bomberRef}
+            position={position}
+            rotation={rotation}
+            scale={BOMBER_SIZE}
+            dispose={null}
+        >
             <group rotation={[-Math.PI / 2, 0, 0]} scale={10}>
                 <group rotation={[-Math.PI / 2, 0, 0]} scale={0.1}>
                     <mesh geometry={nodes.Engines_0.geometry} material={materials.ScratchedMetal} />

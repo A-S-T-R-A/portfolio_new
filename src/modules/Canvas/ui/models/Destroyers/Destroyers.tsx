@@ -6,8 +6,8 @@ export function Destroyers(): ReactElement {
     return (
         <>
             {destroyers.map(item => {
-                const { id, journey } = item
-                return <Destroyer key={id} journey={journey} />
+                const { id } = item
+                return <Destroyer key={id} data={item} />
             })}
         </>
     )

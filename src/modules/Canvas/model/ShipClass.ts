@@ -1,4 +1,4 @@
-import { PI, atan2, roundToNth, sqrt } from "modules/Canvas/lib/math/basics"
+import { atan2, roundToNth, sqrt } from "modules/Canvas/lib/math/basics"
 import {
     IShipsManeuvering,
     Journey,
@@ -28,11 +28,11 @@ export class ShipClass {
     private position: Position = [0, 0, 0]
     private target: Position = [0, 0, 0]
     private goalSpeed: Speed = 0
-    private rotation: Rotation = [0, 0, 0]
     private goalRotation: Rotation = [0, 0, 0]
     private vector: Vector = [0, 0, 0]
     private direction: Vector = [0, 0, 0]
     private list = 0
+    public rotation: Rotation = [0, 0, 0]
     public speed: Speed = 1
 
     constructor(journey: Journey, shipsManeuvering: IShipsManeuvering) {
@@ -168,7 +168,7 @@ export class ShipClass {
             z = z2 - z1 < -this.rateOfTurn ? z1 - this.rateOfTurn : z2
         }
 
-        this.setList(y2 - y1) //y2-y1
+        this.setList(y2 - y1)
 
         this.rotation = [x, y, z]
         return [x, y, z + this.list]

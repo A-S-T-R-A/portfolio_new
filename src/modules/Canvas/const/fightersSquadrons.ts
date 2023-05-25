@@ -2,6 +2,16 @@ import { IShipData } from "../types/types"
 
 export const fightersSquadrons: IShipData[] = [
     /*  {
+        id: 0,
+        type: "fighters",
+        journey: [[[0, -10, 0], 0], [[0, -10, 100], 4], [[-70, -10, 400]]],
+    },
+    {
+        id: -1,
+        type: "bombers",
+        journey: [[[0, -20, 0], 0], [[0, -20, 100], 4], [[-70, -10, 400]]],
+    }, */
+    /*  {
         id: 1,
         type: "fighters",
         journey: [[[0, 0, -200], 6], [[0, 0, 100], 4], [[70, -10, 400]]],
