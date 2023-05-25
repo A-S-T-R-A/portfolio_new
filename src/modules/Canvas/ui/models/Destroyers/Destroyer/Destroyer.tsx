@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber"
 import { DestroyerScene } from "./DestroyerScene"
 import { Journey } from "../../../../types/types"
 import { DestroyerClass } from "../../../../model/DestroyerClass"
+import { alignToX } from "../../../../lib/alignToX"
 
 interface IDestroyer {
     journey: Journey
@@ -19,7 +20,7 @@ export function Destroyer(props: IDestroyer) {
         if (!destroyerRef.current || isReachedEnd || speed === 0) return
         const { position, rotation } = classRef.current.move(destroyerRef.current.position)
         destroyerRef.current.position.set(...position)
-        rotation && destroyerRef.current.rotation.set(...rotation)
+        rotation && destroyerRef.current.rotation.set(...alignToX(rotation))
     })
 
     return (
@@ -27,7 +28,7 @@ export function Destroyer(props: IDestroyer) {
             destroyerRef={destroyerRef}
             scale={1}
             position={position}
-            rotation={rotation}
+            rotation={alignToX(rotation)}
         />
     )
 }

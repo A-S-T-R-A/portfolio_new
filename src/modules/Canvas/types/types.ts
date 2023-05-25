@@ -20,4 +20,7 @@ export interface IShipsManeuvering {
     rateOfTurn: number
     maxSpeed: number
     turnDeceleration: number
+    rateOfTurningList: number
+    rateOfStabilizingList: number
+    maxList: number
 }

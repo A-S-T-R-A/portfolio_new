@@ -22,7 +22,6 @@ export function offsetSquadronJourney(journey: Journey, index: number): Journey 
 
         // @ts-ignore
         newItem[0] = offsetCoordinates(newItem[0])
-        console.log(newItem[0])
         return newItem
     })
 

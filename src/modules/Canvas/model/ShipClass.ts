@@ -1,4 +1,4 @@
-import { atan2, roundToNth, sqrt } from "modules/Canvas/lib/math/basics"
+import { PI, atan2, roundToNth, sqrt } from "modules/Canvas/lib/math/basics"
 import {
     IShipsManeuvering,
     Journey,
@@ -21,6 +21,9 @@ export class ShipClass {
     private inertia: number
     private rateOfTurn: number
     private maxSpeed: Speed
+    private rateOfTurningList: number
+    private rateOfStabilizingList: number
+    private maxList: number
 
     private position: Position = [0, 0, 0]
     private target: Position = [0, 0, 0]
@@ -36,11 +39,22 @@ export class ShipClass {
         this.journey = journey
         this.waypoint = 1
 
-        const { inertia, rateOfTurn, maxSpeed, turnDeceleration } = shipsManeuvering
+        const {
+            inertia,
+            rateOfTurn,
+            maxSpeed,
+            turnDeceleration,
+            rateOfTurningList,
+            rateOfStabilizingList,
+            maxList,
+        } = shipsManeuvering
         this.inertia = inertia
         this.turnDeceleration = turnDeceleration
         this.rateOfTurn = rateOfTurn
         this.maxSpeed = maxSpeed
+        this.rateOfTurningList = rateOfTurningList
+        this.rateOfStabilizingList = rateOfStabilizingList
+        this.maxList = maxList
         this.init()
     }
 
@@ -154,36 +168,33 @@ export class ShipClass {
             z = z2 - z1 < -this.rateOfTurn ? z1 - this.rateOfTurn : z2
         }
 
-        this.setList(y2 - y1)
+        this.setList(y2 - y1) //y2-y1
 
         this.rotation = [x, y, z]
         return [x, y, z + this.list]
     }
 
     private setList(turn: number) {
-        const initialRateOfList = 0.02
-        const rateOfList = 0.01
-        const maxList = 0.4
-
         if (turn > 0) {
             this.list =
-                Math.abs(this.list) <= maxList
-                    ? this.list - initialRateOfList - turn / 10
-                    : -maxList
+                Math.abs(this.list) < this.maxList
+                    ? this.list - this.rateOfTurningList
+                    : -this.maxList
         }
         if (turn < 0) {
             this.list =
-                Math.abs(this.list) <= maxList ? this.list + initialRateOfList - turn / 10 : maxList
+                Math.abs(this.list) < this.maxList
+                    ? this.list + this.rateOfTurningList
+                    : this.maxList
         }
         if (turn === 0) {
             this.list =
-                this.list > 0 && this.list >= rateOfList
-                    ? this.list - rateOfList
-                    : this.list < 0 && -this.list >= rateOfList
-                    ? this.list + rateOfList
+                this.list > 0 && this.list >= this.rateOfStabilizingList
+                    ? this.list - this.rateOfStabilizingList
+                    : this.list < 0 && -this.list >= this.rateOfStabilizingList
+                    ? this.list + this.rateOfStabilizingList
                     : 0
         }
-        console.log(this.list, turn)
     }
 
     public move(position: Vector3): { position: Position; rotation: Rotation | null } {
