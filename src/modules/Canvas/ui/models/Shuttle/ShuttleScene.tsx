@@ -73,7 +73,13 @@ export function ShuttleScene(props: IShuttleScene) {
     const { shuttleRef, position, rotation } = props
     const { nodes, materials } = useGLTF("/shuttle/scene.gltf") as GLTFResult
     return (
-        <group ref={shuttleRef} position={position} rotation={rotation} scale={1} dispose={null}>
+        <group
+            ref={shuttleRef}
+            position={position}
+            rotation={rotation}
+            scale={SHUTTLE_SIZE}
+            dispose={null}
+        >
             <group
                 position={[0.6, 0.57, 0.57]}
                 rotation={[-Math.PI / 2, 0, -Math.PI]}
