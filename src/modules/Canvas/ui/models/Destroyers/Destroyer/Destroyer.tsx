@@ -18,7 +18,7 @@ export function Destroyer(props: IDestroyer) {
 
     const [isDeploymentStarted, setIsDeploymentStarted] = useState(false)
     const [shuttlesJourney, setShuttlesJourney] = useState<Journey>([])
-    const totalShuttles = data.shuttles?.length || 0
+    //const totalShuttles = data.shuttles?.length || 0
 
     useFrame(() => {
         const { speed, isReachedEnd } = classRef.current
