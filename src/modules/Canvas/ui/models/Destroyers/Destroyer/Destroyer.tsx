@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import { useFrame } from "@react-three/fiber"
 import { DestroyerScene } from "./DestroyerScene"
 import { IDestroyersData, Journey } from "../../../../types/types"
@@ -17,8 +17,7 @@ export function Destroyer(props: IDestroyer) {
     const { position, rotation } = classRef.current.getInitialData()
 
     const [isDeploymentStarted, setIsDeploymentStarted] = useState(false)
-    const [shuttlesJourney, setShuttlesJourney] = useState<Journey>([])
-    //const totalShuttles = data.shuttles?.length || 0
+    const [shuttleJourneys, setShuttlesJourneys] = useState<Journey[] | null>(null)
 
     useFrame(() => {
         const { speed, isReachedEnd } = classRef.current
@@ -29,16 +28,9 @@ export function Destroyer(props: IDestroyer) {
 
         if (classRef.current.isReachedEnd && !isDeploymentStarted) {
             setIsDeploymentStarted(true)
-            deployShuttle(position)
-            setTimeout(() => deployShuttle(position), 1500)
+            setShuttlesJourneys(classRef.current.generateShuttlesJourneys(position))
         }
     })
-
-    // @ts-ignore
-    function deployShuttle(position: Position) {
-        // @ts-ignore
-        setShuttlesJourney(prev => [...prev, classRef.current.generateShuttleJourney(position)])
-    }
 
     return (
         <>
@@ -47,17 +39,13 @@ export function Destroyer(props: IDestroyer) {
                 position={position}
                 rotation={alignToX(rotation)}
             />
-            {/* {Array(totalShuttles)
-                .fill("")
-                .map((_, i) => {
-                    console.log(i, shuttlesJourney[i])
-                    // @ts-ignore
-                    return shuttlesJourney[i] ? <Shuttle journey={shuttlesJourney[i]} /> : null
-                })} */}
-            {/* @ts-ignore */}
-            {shuttlesJourney[0] ? <Shuttle journey={shuttlesJourney[0]} /> : null}
-            {/* @ts-ignore */}
-            {shuttlesJourney[1] ? <Shuttle journey={shuttlesJourney[1]} /> : null}
+            {isDeploymentStarted &&
+                shuttleJourneys?.map((item, index) => {
+                    const delay = index * (Math.floor(Math.random() * (1000 - 800 + 1)) + 800)
+                    return (
+                        <Shuttle key={`shuttle${data.id}.${index}`} journey={item} delay={delay} />
+                    )
+                })}
         </>
     )
 }

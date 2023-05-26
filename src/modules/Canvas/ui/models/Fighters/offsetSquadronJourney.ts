@@ -2,9 +2,9 @@ import { Journey, Position } from "../../../types/types"
 
 export function offsetSquadronJourney(journey: Journey, index: number): Journey {
     if (index === 0) return journey
-    const SPREAD_X = 8
-    const SPREAD_Y = 1
-    const SPREAD_Z = 15
+    const SPREAD_X = 2
+    const SPREAD_Y = 0.25
+    const SPREAD_Z = 3.75
 
     function offsetCoordinates(psn: Position): Position {
         const [x, y, z] = psn

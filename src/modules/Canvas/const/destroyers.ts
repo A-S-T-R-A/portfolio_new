@@ -5,7 +5,7 @@ interface IDestroyersData extends IShipData {
 }
 
 export const destroyers: IDestroyersData[] = [
-    {
+    /* {
         id: 0,
         journey: [[[0, 0, -100], 1], [[0, 0, 0]]],
         shuttles: [
@@ -18,7 +18,7 @@ export const destroyers: IDestroyersData[] = [
                 journey: [[[20, 2, 250], 2], [[30, -5, 600]]],
             },
         ],
-    },
+    }, */
     /*  {
         id: 1,
         journey: [[[15, 0, -450], 5], [[10, 2, 0], 2.5], [[30, 2, 300], 0], [[20, 25, 500]]],
