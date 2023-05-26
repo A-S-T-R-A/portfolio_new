@@ -1,3 +1,4 @@
+import { Background } from "modules/Background/Background"
 import { Contact } from "modules/Contact"
 import { Footer } from "modules/Footer"
 import { Header } from "modules/Header"
@@ -10,6 +11,7 @@ function App() {
         <div>
             <Header />
             <div>
+                <Background />
                 <Main />
                 <Projects />
                 <Technologies />

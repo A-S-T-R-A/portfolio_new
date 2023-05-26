@@ -1,0 +1,17 @@
+.planet {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../shared/assets/images/background/planet.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../shared/assets/images/background/stars.svg);
+    z-index: -1;
+}
