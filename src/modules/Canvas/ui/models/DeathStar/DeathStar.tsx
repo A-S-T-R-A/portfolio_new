@@ -12,7 +12,7 @@ export function DeathStar() {
     const deathStarScene = useGLTF("./death_star/scene.gltf")
     const deathStarRef = useRef<THREE.Group>(null)
     const classRef = useRef(new DeathStarClass(journey))
-    const { position, rotation } = classRef.current.getInitialData()
+    const { position, rotation } = classRef.current.getData()
 
     function alignDeathStar(r: Rotation): Rotation {
         const [x, y, z] = r

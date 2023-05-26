@@ -13,7 +13,7 @@ export function Fighter(props: IFighter) {
     const { journey } = props
     const fighterRef = useRef<THREE.Group>(null)
     const classRef = useRef(new FighterClass(journey))
-    const { position, rotation } = classRef.current.getInitialData()
+    const { position, rotation } = classRef.current.getData()
 
     useFrame(() => {
         const { speed, isReachedEnd } = classRef.current
