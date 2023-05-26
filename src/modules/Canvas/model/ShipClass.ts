@@ -33,7 +33,7 @@ export class ShipClass {
     private direction: Vector = [0, 0, 0]
     private list = 0
     public rotation: Rotation = [0, 0, 0]
-    public speed: Speed = 1
+    public speed: Speed = 0.5
 
     constructor(journey: Journey, shipsManeuvering: IShipsManeuvering) {
         this.journey = journey
@@ -107,7 +107,7 @@ export class ShipClass {
             this.waypoint++
             this.init()
         } else {
-            this.isReachedEnd = true
+            this.goalSpeed = 0
         }
     }
 
@@ -118,15 +118,15 @@ export class ShipClass {
             case goalSpeed === this.speed:
                 break
             case goalSpeed > this.speed:
-                if (goalSpeed - this.speed > this.inertia) {
-                    this.speed = roundToNth(this.speed + this.inertia, 2)
+                if (goalSpeed - this.speed > 1 / this.inertia) {
+                    this.speed = roundToNth(this.speed + 1 / this.inertia, 4)
                 } else {
                     this.speed = goalSpeed
                 }
                 break
             case goalSpeed < this.speed:
-                if (this.speed - goalSpeed > this.inertia) {
-                    this.speed = roundToNth(this.speed - this.inertia, 2)
+                if (this.speed - goalSpeed > 1 / this.inertia) {
+                    this.speed = roundToNth(this.speed - 1 / this.inertia, 4)
                 } else {
                     this.speed = goalSpeed
                 }
@@ -134,6 +134,11 @@ export class ShipClass {
             default:
                 break
         }
+
+        if (this.speed === 0) {
+            this.isReachedEnd = true
+        }
+
         return this.speed
     }
 
@@ -211,18 +216,19 @@ export class ShipClass {
         const reachedY = vy > 0 ? currentY >= ly : currentY <= ly
         const reachedZ = vz > 0 ? currentZ >= lz : currentZ <= lz
 
-        const x = reachedX ? currentX : dx * speed + currentX
-        const y = reachedY ? currentY : dy * speed + currentY
-        const z = reachedZ ? currentZ : dz * speed + currentZ
+        const x = dx * speed + currentX
+        const y = dy * speed + currentY
+        const z = dz * speed + currentZ
 
         if (reachedX && reachedY && reachedZ) {
+            this.position = [x, y, z]
             this.nextWaypoint()
         }
 
         return { position: [x, y, z], rotation }
     }
 
-    public getInitialData() {
+    public getData() {
         return { position: this.position, rotation: this.rotation }
     }
 }

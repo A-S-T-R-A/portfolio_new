@@ -1,5 +1,10 @@
 import { IShipData } from "../types/types"
 
-export const deathStar: IShipData = {
-    journey: [[[10, 0, -540]]],
+interface IDeathStarData extends IShipData {
+    rateOfYRotation: number
+}
+
+export const deathStar: IDeathStarData = {
+    journey: [[[200, 100, -1000], 0.1], [[-10, 50, -700], 0.1], [[100, 30, 100]]],
+    rateOfYRotation: 0.002,
 }

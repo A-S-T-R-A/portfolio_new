@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { useFrame } from "@react-three/fiber"
 import { DestroyerScene } from "./DestroyerScene"
 import { IDestroyersData, Journey } from "../../../../types/types"
@@ -14,14 +14,14 @@ export function Destroyer(props: IDestroyer) {
     const { data } = props
     const destroyerRef = useRef<THREE.Group>(null)
     const classRef = useRef(new DestroyerClass(data))
-    const { position, rotation } = classRef.current.getInitialData()
+    const { position, rotation } = classRef.current.getData()
 
     const [isDeploymentStarted, setIsDeploymentStarted] = useState(false)
     const [shuttleJourneys, setShuttlesJourneys] = useState<Journey[] | null>(null)
 
     useFrame(() => {
-        const { speed, isReachedEnd } = classRef.current
-        if (!destroyerRef.current || isReachedEnd || speed === 0) return
+        const { speed } = classRef.current
+        if (!destroyerRef.current || speed === 0) return
         const { position, rotation } = classRef.current.move(destroyerRef.current.position)
         destroyerRef.current.position.set(...position)
         rotation && destroyerRef.current.rotation.set(...alignToX(rotation))
@@ -31,6 +31,8 @@ export function Destroyer(props: IDestroyer) {
             setShuttlesJourneys(classRef.current.generateShuttlesJourneys(position))
         }
     })
+
+    console.log(position)
 
     return (
         <>

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react"
 import { ShuttleScene } from "./ShuttleScene"
 import { Journey } from "../../../types/types"
-
 import { ShuttleClass } from "../../../model/ShuttleClass"
 import { alignToX } from "../../../lib/alignToX"
 import { useFrame } from "@react-three/fiber"
@@ -17,7 +16,7 @@ export function Shuttle(props: IShuttle) {
     const classRef = useRef(new ShuttleClass(journey))
     const isCanMoveRef = useRef(false)
 
-    const { position, rotation } = classRef.current.getInitialData()
+    const { position, rotation } = classRef.current.getData()
 
     useEffect(() => {
         setTimeout(() => {
