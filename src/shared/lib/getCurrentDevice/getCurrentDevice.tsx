@@ -6,9 +6,9 @@ export function getCurrentDevice(width: number) {
             return "tablet"
         case width < 1024:
             return "laptop"
-        case width < 1440:
+        case width <= 2000:
             return "desktop"
-        case width < 4000:
+        case width > 2000:
             return "desktop4K"
         default:
             return "desktop"

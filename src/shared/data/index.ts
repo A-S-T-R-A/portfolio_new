@@ -6,13 +6,12 @@ import { desktop4K } from "./desktop4K"
 
 export type DeviceType = "mobile" | "tablet" | "laptop" | "desktop" | "desktop4K"
 
-export type BackgroundData = {
+export type DataType = {
     [key in DeviceType]: {
         planet: {
             min: number
             max: number
             img: string
-            imgLow: string
         }
         stars: {
             min: number
@@ -21,7 +20,7 @@ export type BackgroundData = {
     }
 }
 
-export const backgroundData: BackgroundData = {
+export const data: DataType = {
     mobile,
     tablet,
     laptop,
