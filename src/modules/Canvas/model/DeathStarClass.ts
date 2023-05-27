@@ -3,7 +3,7 @@ import { ShipClass } from "./ShipClass"
 
 export class DeathStarClass extends ShipClass {
     constructor(journey: Journey) {
-        const inertia = 10 //positive
+        const inertia = 1000 //positive
         const rateOfTurn = 0.001 //positive
         const maxSpeed = 1 //positive
         const turnDeceleration = 0.9 // percentage

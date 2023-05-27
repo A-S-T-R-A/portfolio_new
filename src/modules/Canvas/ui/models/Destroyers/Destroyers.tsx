@@ -5,7 +5,7 @@ import { Destroyer } from "./Destroyer/Destroyer"
 export function Destroyers(): ReactElement {
     return (
         <>
-            {destroyers.map(item => {
+            {destroyers.map((item, index) => {
                 const { id } = item
                 return <Destroyer key={id} data={item} />
             })}

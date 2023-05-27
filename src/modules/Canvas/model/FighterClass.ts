@@ -4,7 +4,7 @@ import { ShipClass } from "./ShipClass"
 
 export class FighterClass extends ShipClass {
     constructor(journey: Journey) {
-        const inertia = 0.05 //positive
+        const inertia = 5 //positive
         const rateOfTurn = 0.008 //positive
         const maxSpeed = 8 //positive
         const turnDeceleration = 0.9 // percentage

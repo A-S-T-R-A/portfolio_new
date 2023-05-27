@@ -14,16 +14,23 @@ export class DestroyerClass extends ShipClass {
         const maxList = 0.4 //radians
 
         const { journey, shuttles } = data
+        const newJourney = [[[0, 0, -3000], 500], ...journey] as Journey
 
-        super(journey, {
-            inertia,
-            rateOfTurn,
-            maxSpeed,
-            turnDeceleration,
-            rateOfTurningList,
-            rateOfStabilizingList,
-            maxList,
-        })
+        const isJumpFromHyperSpace = true
+
+        super(
+            newJourney,
+            {
+                inertia,
+                rateOfTurn,
+                maxSpeed,
+                turnDeceleration,
+                rateOfTurningList,
+                rateOfStabilizingList,
+                maxList,
+            },
+            isJumpFromHyperSpace
+        )
 
         this.shuttles = shuttles || null
     }
@@ -31,7 +38,7 @@ export class DestroyerClass extends ShipClass {
     public generateShuttlesJourneys(currentPosition: Position): Journey[] | null {
         const [x0, y0, z0] = currentPosition
         const journeysArray = this.shuttles?.map(item => [
-            [[x0, y0, z0], 0.3],
+            [[x0, y0 - 3, z0], 0.2],
             [[x0, y0 - 10, z0], 2],
             ...item.journey,
         ])

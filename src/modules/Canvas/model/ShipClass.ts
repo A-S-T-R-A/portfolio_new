@@ -24,6 +24,7 @@ export class ShipClass {
     private rateOfTurningList: number
     private rateOfStabilizingList: number
     private maxList: number
+    private isJumpFromHyperSpace = false
 
     private position: Position = [0, 0, 0]
     private target: Position = [0, 0, 0]
@@ -35,9 +36,14 @@ export class ShipClass {
     public rotation: Rotation = [0, 0, 0]
     public speed: Speed = 0.5
 
-    constructor(journey: Journey, shipsManeuvering: IShipsManeuvering) {
+    constructor(
+        journey: Journey,
+        shipsManeuvering: IShipsManeuvering,
+        isJumpFromHyperSpace?: boolean
+    ) {
         this.journey = journey
         this.waypoint = 1
+        this.isJumpFromHyperSpace = isJumpFromHyperSpace || false
 
         const {
             inertia,
@@ -71,7 +77,8 @@ export class ShipClass {
         this.target = this.journey[this.waypoint][0]
         const goalSpeed = this.journey[this.waypoint - 1][1] || 0
         if (!this.isInited) {
-            this.goalSpeed = goalSpeed > this.maxSpeed ? this.maxSpeed : goalSpeed
+            const maxSpeed = this.isJumpFromHyperSpace ? 3000 : this.maxSpeed
+            this.goalSpeed = goalSpeed > maxSpeed ? maxSpeed : goalSpeed
         }
     }
 
@@ -113,20 +120,21 @@ export class ShipClass {
 
     private calculateCurrentSpeed(): Speed {
         const goalSpeed = this.isTurning ? this.goalSpeed * this.turnDeceleration : this.goalSpeed
+        const inertia = this.isJumpFromHyperSpace ? 0.01 : this.inertia
 
         switch (true) {
             case goalSpeed === this.speed:
                 break
             case goalSpeed > this.speed:
-                if (goalSpeed - this.speed > 1 / this.inertia) {
-                    this.speed = roundToNth(this.speed + 1 / this.inertia, 4)
+                if (goalSpeed - this.speed > 1 / inertia) {
+                    this.speed = roundToNth(this.speed + 1 / inertia, 4)
                 } else {
                     this.speed = goalSpeed
                 }
                 break
             case goalSpeed < this.speed:
-                if (this.speed - goalSpeed > 1 / this.inertia) {
-                    this.speed = roundToNth(this.speed - 1 / this.inertia, 4)
+                if (this.speed - goalSpeed > 1 / inertia) {
+                    this.speed = roundToNth(this.speed - 1 / inertia, 4)
                 } else {
                     this.speed = goalSpeed
                 }
@@ -216,12 +224,16 @@ export class ShipClass {
         const reachedY = vy > 0 ? currentY >= ly : currentY <= ly
         const reachedZ = vz > 0 ? currentZ >= lz : currentZ <= lz
 
-        const x = dx * speed + currentX
-        const y = dy * speed + currentY
-        const z = dz * speed + currentZ
+        const x = reachedX ? currentX : dx * speed + currentX
+        const y = reachedY ? currentY : dy * speed + currentY
+        const z = reachedZ ? currentZ : dz * speed + currentZ
 
         if (reachedX && reachedY && reachedZ) {
             this.position = [x, y, z]
+            if (this.isJumpFromHyperSpace) {
+                this.isJumpFromHyperSpace = false
+                this.speed = 0.1
+            }
             this.nextWaypoint()
         }
 

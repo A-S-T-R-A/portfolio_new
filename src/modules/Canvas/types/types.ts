@@ -17,6 +17,7 @@ export interface IShipData {
 
 export interface IDestroyersData extends IShipData {
     shuttles?: IShipData[]
+    jumpDelay: number
 }
 
 export interface IShipsManeuvering {

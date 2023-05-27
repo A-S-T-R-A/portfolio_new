@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import { useGLTF } from "@react-three/drei"
 import { deathStar } from "../../../const/deathStar"
 import { DEATH_STAR_SIZE } from "../../../const/sizes"
@@ -8,10 +8,11 @@ import { Rotation } from "modules/Canvas/types/types"
 import { PI } from "modules/Canvas/lib/math/basics"
 
 export function DeathStar() {
-    const { journey, rateOfYRotation } = deathStar
+    const { journey, rateOfYRotation, jumpDelay } = deathStar
     const deathStarScene = useGLTF("./death_star/scene.gltf")
     const deathStarRef = useRef<THREE.Group>(null)
     const classRef = useRef(new DeathStarClass(journey))
+    const isCanMoveRef = useRef(false)
     const { position, rotation } = classRef.current.getData()
 
     function alignDeathStar(r: Rotation): Rotation {
@@ -19,9 +20,15 @@ export function DeathStar() {
         return [-z, y + PI / 2, -x]
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            isCanMoveRef.current = true
+        }, jumpDelay)
+    }, [])
+
     useFrame(() => {
         const { speed, isReachedEnd } = classRef.current
-        if (!deathStarRef.current || isReachedEnd || speed === 0) return
+        if (!deathStarRef.current || isReachedEnd || speed === 0 || !isCanMoveRef.current) return
         const { position, rotation } = classRef.current.move(deathStarRef.current.position)
         deathStarRef.current.position.set(...position)
         if (rotation) {
