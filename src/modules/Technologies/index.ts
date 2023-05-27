@@ -1,3 +1,3 @@
-import { lazy } from "react"
+import Technologies from "./ui/Technologies"
 
-export const Technologies = lazy(() => import("./ui/Technologies"))
+export { Technologies }
