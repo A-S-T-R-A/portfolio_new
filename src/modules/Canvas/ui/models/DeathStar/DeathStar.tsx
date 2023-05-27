@@ -8,7 +8,7 @@ import { Rotation } from "modules/Canvas/types/types"
 import { PI } from "modules/Canvas/lib/math/basics"
 
 export function DeathStar() {
-    const { journey, rateOfYRotation, jumpDelay } = deathStar
+    const { journey, /* rateOfYRotation, */ jumpDelay } = deathStar
     const deathStarScene = useGLTF("./death_star/scene.gltf")
     const deathStarRef = useRef<THREE.Group>(null)
     const classRef = useRef(new DeathStarClass(journey))
@@ -29,7 +29,7 @@ export function DeathStar() {
     useFrame(() => {
         const { speed, isReachedEnd } = classRef.current
         if (!deathStarRef.current || isReachedEnd || speed === 0 || !isCanMoveRef.current) return
-        const { position, rotation } = classRef.current.move(deathStarRef.current.position)
+        const { position } = classRef.current.move(deathStarRef.current.position)
         deathStarRef.current.position.set(...position)
         /* if (rotation) {
             const [x, _, z] = alignDeathStar(rotation)
