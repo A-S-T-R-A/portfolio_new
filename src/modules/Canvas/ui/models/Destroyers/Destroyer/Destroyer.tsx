@@ -28,6 +28,7 @@ export function Destroyer(props: IDestroyer) {
 
     useFrame(() => {
         const { speed } = classRef.current
+        console.log(speed)
         if (!destroyerRef.current || speed === 0 || !isCanMoveRef.current) return
         const { position, rotation } = classRef.current.move(destroyerRef.current.position)
         destroyerRef.current.position.set(...position)

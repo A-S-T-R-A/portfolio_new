@@ -7,12 +7,12 @@ export class DestroyerClass extends ShipClass {
 
     constructor(data: IDestroyersData) {
         const inertia = 500 // the more the harder to gain/lose speed
-        const rateOfTurn = 0.0003
+        const rateOfTurn = 0.0015
         const maxSpeed = 4
         const turnDeceleration = 0.7
         const rateOfTurningList = 0.0007 //positive
         const rateOfStabilizingList = 0.0007 //positive
-        const maxList = 0.1 //radians
+        const maxList = 0.2 //radians
 
         const { journey, shuttles } = data
         const newJourney = [hyperSpaceStart, ...journey] as Journey

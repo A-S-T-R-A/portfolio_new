@@ -224,9 +224,9 @@ export class ShipClass {
         const reachedY = vy > 0 ? currentY >= ly : currentY <= ly
         const reachedZ = vz > 0 ? currentZ >= lz : currentZ <= lz
 
-        const x = reachedX ? currentX : dx * speed + currentX
-        const y = reachedY ? currentY : dy * speed + currentY
-        const z = reachedZ ? currentZ : dz * speed + currentZ
+        const x = reachedX && this.isJumpFromHyperSpace ? currentX : dx * speed + currentX
+        const y = reachedY && this.isJumpFromHyperSpace ? currentY : dy * speed + currentY
+        const z = reachedZ && this.isJumpFromHyperSpace ? currentZ : dz * speed + currentZ
 
         if (reachedX && reachedY && reachedZ) {
             this.position = [x, y, z]

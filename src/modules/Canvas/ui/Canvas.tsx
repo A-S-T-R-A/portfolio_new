@@ -21,7 +21,7 @@ export function SceneCanvas() {
             >
                 <Camera />
                 {/* <axesHelper args={[100]} /> */}
-                <OrbitControls enabled enableZoom={true} />
+                {/* <OrbitControls enabled enableZoom={true} /> */}
                 <Light />
                 {/* <Light isTest /> */}
                 <DeathStar />
