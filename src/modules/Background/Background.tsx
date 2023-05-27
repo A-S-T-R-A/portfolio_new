@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import styles from "./Background.module.scss"
 import { getPosition } from "./lib/getPosition"
-import { DeviceType, backgroundData } from "./data"
+import { DeviceType, backgroundData } from "shared/data"
 
 export function Background({ currentDevice }: { currentDevice: DeviceType }) {
     const dataRef = useRef(backgroundData[currentDevice])
