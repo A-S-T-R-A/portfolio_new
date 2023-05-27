@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import styles from "./Background.module.scss"
 import { getPosition } from "./lib/getPosition"
-import { DeviceType, backgroundData } from "shared/data"
+import { DeviceType, data } from "shared/data"
 
 export function Background({ currentDevice }: { currentDevice: DeviceType }) {
-    const dataRef = useRef(backgroundData[currentDevice])
+    const dataRef = useRef(data[currentDevice])
     const [planetPosition, setPlanetPosition] = useState(() => dataRef.current.planet.min)
     const [starsPosition, setStarsPosition] = useState(() => dataRef.current.stars.min)
 
@@ -16,7 +16,7 @@ export function Background({ currentDevice }: { currentDevice: DeviceType }) {
     }, [])
 
     useEffect(() => {
-        dataRef.current = backgroundData[currentDevice]
+        dataRef.current = data[currentDevice]
         scrollHandler()
     }, [currentDevice, scrollHandler])
 
