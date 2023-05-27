@@ -1,3 +1,2 @@
-import { lazy } from "react"
-
-export const Form = lazy(() => import("./ui/Form"))
+import Form from "./ui/Form"
+export { Form }
