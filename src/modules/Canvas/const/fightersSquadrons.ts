@@ -14,7 +14,7 @@ export const fightersSquadrons: IShipData[] = [
     /*  {
         id: 1,
         type: "fighters",
-        journey: [[[0, 0, -200], 6], [[0, 0, 100], 4], [[70, -10, 400]]],
+        journey: [[[0, 0, -600], 2], [[0, 0, 100], 4], [[70, -10, 400]]],
     }, */
     /* {
         id: 2,

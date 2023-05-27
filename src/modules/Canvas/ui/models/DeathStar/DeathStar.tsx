@@ -31,14 +31,14 @@ export function DeathStar() {
         if (!deathStarRef.current || isReachedEnd || speed === 0 || !isCanMoveRef.current) return
         const { position, rotation } = classRef.current.move(deathStarRef.current.position)
         deathStarRef.current.position.set(...position)
-        if (rotation) {
+        /* if (rotation) {
             const [x, _, z] = alignDeathStar(rotation)
             deathStarRef.current.rotation.x = x
             deathStarRef.current.rotation.y -= rateOfYRotation
             deathStarRef.current.rotation.z = z
         } else {
             deathStarRef.current.rotation.y -= rateOfYRotation
-        }
+        } */
     })
 
     return (

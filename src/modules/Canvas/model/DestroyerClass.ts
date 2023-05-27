@@ -1,3 +1,4 @@
+import { hyperSpaceStart } from "../const/destroyers"
 import { IDestroyersData, IShipData, Journey, Position } from "../types/types"
 import { ShipClass } from "./ShipClass"
 
@@ -6,15 +7,15 @@ export class DestroyerClass extends ShipClass {
 
     constructor(data: IDestroyersData) {
         const inertia = 500 // the more the harder to gain/lose speed
-        const rateOfTurn = 0.003
+        const rateOfTurn = 0.0003
         const maxSpeed = 4
         const turnDeceleration = 0.7
-        const rateOfTurningList = 0.007 //positive
-        const rateOfStabilizingList = 0.004 //positive
-        const maxList = 0.4 //radians
+        const rateOfTurningList = 0.0007 //positive
+        const rateOfStabilizingList = 0.0007 //positive
+        const maxList = 0.1 //radians
 
         const { journey, shuttles } = data
-        const newJourney = [[[0, 0, -3000], 500], ...journey] as Journey
+        const newJourney = [hyperSpaceStart, ...journey] as Journey
 
         const isJumpFromHyperSpace = true
 
