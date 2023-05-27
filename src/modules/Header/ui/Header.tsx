@@ -11,8 +11,9 @@ export function Header() {
 
     useEffect(() => {
         window.addEventListener("scroll", scrollHandler)
-
         return () => window.removeEventListener("scroll", scrollHandler)
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const scrollHandler = useThrottle(() => {

@@ -1,3 +1,2 @@
-import { lazy } from "react"
-
-export const Footer = lazy(() => import("./Footer"))
+import Footer from "./Footer"
+export { Footer }
