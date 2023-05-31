@@ -1,3 +1,4 @@
+import { Canvas } from "modules/Canvas"
 import { Background } from "modules/Background/Background"
 import { DeviceType } from "shared/data"
 import { Contact } from "modules/Contact"
@@ -27,6 +28,7 @@ function App() {
     return (
         <div>
             <Header />
+            <Canvas />
             <div>
                 <Background currentDevice={device} />
                 <Main />

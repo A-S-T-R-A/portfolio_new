@@ -1,0 +1,11 @@
+Model Information:
+* title:	Star Wars: TIE/sa Bomber
+* source:	https://sketchfab.com/3d-models/star-wars-tiesa-bomber-03c30934651e4f5798b67e74049ec6bc
+* author:	Daniel (https://sketchfab.com/DanielAndersson)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Star Wars: TIE/sa Bomber" (https://sketchfab.com/3d-models/star-wars-tiesa-bomber-03c30934651e4f5798b67e74049ec6bc) by Daniel (https://sketchfab.com/DanielAndersson) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
