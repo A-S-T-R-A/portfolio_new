@@ -21,13 +21,13 @@ export function SceneCanvas() {
             >
                 <Camera />
                 {/* <axesHelper args={[100]} /> */}
-                <OrbitControls enabled enableZoom={true} />
+                {/* <OrbitControls enabled enableZoom={true} /> */}
                 <Light />
                 {/* <Light isTest /> */}
-                <DeathStar />
+                {/* <DeathStar /> */}
                 {/* <Shuttle /> */}
-                <Destroyers />
-                <Fighters />
+                {/* <Destroyers /> */}
+                {/*  <Fighters /> */}
                 {/* <Sun /> */}
                 <Preload all />
             </Canvas>

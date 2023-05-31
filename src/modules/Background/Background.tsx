@@ -27,12 +27,12 @@ export function Background({ currentDevice }: { currentDevice: DeviceType }) {
 
     return (
         <>
-            <div className={styles.stars} style={{ backgroundPosition: `0 ${starsPosition}px` }} />
+            <div className={styles.stars} style={{ backgroundPosition: `0 ${starsPosition}%` }} />
             <div
                 className={styles.planet}
                 style={{
                     backgroundImage: `url(${dataRef.current.planet.img})`,
-                    backgroundPosition: `0 ${planetPosition}px`,
+                    backgroundPosition: `0 ${planetPosition}%`,
                 }}
             />
         </>
