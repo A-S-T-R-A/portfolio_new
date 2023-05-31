@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber"
-import { Preload } from "@react-three/drei"
+import { OrbitControls, Preload } from "@react-three/drei"
 /* import { DeathStar } from "./models/DeathStar/DeathStar" */
 /* import { Sun } from "./models/Sun/Sun" */
 /* import { useControls } from "leva" */
@@ -21,7 +21,7 @@ export function SceneCanvas() {
             >
                 <Camera />
                 {/* <axesHelper args={[100]} /> */}
-                {/* <OrbitControls enabled enableZoom={true} /> */}
+                <OrbitControls enabled enableZoom={true} />
                 <Light />
                 {/* <Light isTest /> */}
                 <DeathStar />
