@@ -6,9 +6,10 @@ import { DeathStarClass } from "../../../model/DeathStarClass"
 import { useFrame } from "@react-three/fiber"
 import { Rotation } from "modules/Canvas/types/types"
 import { PI } from "modules/Canvas/lib/math/basics"
+import { DeviceType } from "shared/data"
 
-export function DeathStar() {
-    const { journey, /* rateOfYRotation, */ jumpDelay } = deathStar
+export function DeathStar({ currentDevice }: { currentDevice: DeviceType }) {
+    const { journey, /* rateOfYRotation, */ jumpDelay } = deathStar[currentDevice]
     const deathStarScene = useGLTF("./death_star/scene.gltf")
     const deathStarRef = useRef<THREE.Group>(null)
     const classRef = useRef(new DeathStarClass(journey))
