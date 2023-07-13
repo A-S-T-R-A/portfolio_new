@@ -5,13 +5,13 @@ import { Preload } from "@react-three/drei"
 /* import { useControls } from "leva" */
 import { Camera } from "./camera/Camera"
 import { Light } from "./light/Light"
-/* import { Stars } from "./models/Stars/Stars" */
 import { Destroyers } from "./models/Destroyers/Destroyers"
 import { Fighters } from "./models/Fighters/Fighters"
 import styles from "./Canvas.module.scss"
 import { DeathStar } from "./models/DeathStar/DeathStar"
+import { DeviceType } from "shared/data"
 
-export function SceneCanvas() {
+export function SceneCanvas({ currentDevice }: { currentDevice: DeviceType }) {
     return (
         <div className={styles.container}>
             <Canvas
@@ -24,9 +24,8 @@ export function SceneCanvas() {
                 {/* <OrbitControls enabled enableZoom={true} /> */}
                 <Light />
                 {/* <Light isTest /> */}
-                <DeathStar />
-                {/* <Shuttle /> */}
-                <Destroyers />
+                <DeathStar currentDevice={currentDevice} />
+                <Destroyers currentDevice={currentDevice} />
                 <Fighters />
                 {/* <Sun /> */}
                 <Preload all />
