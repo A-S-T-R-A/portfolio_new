@@ -1,8 +1,9 @@
 import { classNames, Mods } from "shared/lib/classNames/classNames"
 import { ReactNode, useEffect, useState } from "react"
-import cls from "./Modal.module.scss"
 import { Portal } from "./components/Portal"
 import { MODAL_ANIMATION_DELAY } from "../const/const"
+import { AiOutlineClose } from "react-icons/ai"
+import cls from "./Modal.module.scss"
 
 interface ModalProps {
     className?: string
@@ -46,6 +47,7 @@ export const Modal = (props: ModalProps) => {
             <div className={classNames(cls.Modal, mods, [className])}>
                 <div className={cls.overlay} onClick={() => onClose?.()}>
                     <div className={cls.content} onClick={e => e.stopPropagation()}>
+                        <AiOutlineClose className={cls.close} onClick={() => onClose?.()} />
                         {children}
                     </div>
                 </div>
