@@ -1,10 +1,11 @@
-import { AiFillGithub, AiFillFacebook, AiFillLinkedin } from "react-icons/ai"
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
+import { FaTelegramPlane } from "react-icons/fa"
 
 export const socialsData = [
     {
         id: 1,
-        link: "https://www.facebook.com/profile.php?id=100085196048339",
-        icon: <AiFillFacebook />,
+        link: "https://t.me/artius",
+        icon: <FaTelegramPlane />,
     },
     {
         id: 2,

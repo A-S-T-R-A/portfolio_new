@@ -16,7 +16,7 @@ function Hero() {
             </h1>
             <p className={styles.text}>
                 My name is Artur Pazyniuk. I'm a motivated and skilled software engineer with 5
-                years of specializing in building exceptional user experiences.
+                years experience of building efficient and scalable web solutions.
                 <br />
                 My tech stack is React, Redux, TS, SCSS.
             </p>
