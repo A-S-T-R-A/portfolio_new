@@ -2,7 +2,7 @@ import { planetMobile } from "shared/assets/images/background"
 
 export const mobile = {
     planet: {
-        min: 105,
+        min: 95,
         max: 102,
         img: planetMobile,
     },
