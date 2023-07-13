@@ -28,7 +28,7 @@ function App() {
     return (
         <div>
             <Header />
-            {/* <Canvas /> */}
+            <Canvas />
             <div>
                 <Background currentDevice={device} />
                 <Main />

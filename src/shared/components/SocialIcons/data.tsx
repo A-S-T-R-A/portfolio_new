@@ -8,7 +8,7 @@ export const socialsData = [
     },
     {
         id: 2,
-        link: "https://www.linkedin.com/in/artur-pazyniuk-9a2bbb266/",
+        link: "https://www.linkedin.com/in/artur-pazyniuk/",
         icon: <AiFillLinkedin />,
     },
     { id: 3, link: "https://github.com/Art1us", icon: <AiFillGithub /> },
