@@ -1,7 +1,9 @@
 .wrapper {
     max-width: 100vw;
     min-height: fit-content;
-    padding: 1.5rem;
+    margin-top: 60px;
+    padding: 1rem;
+    background: #050816df;
 }
 
 .container {
@@ -27,6 +29,8 @@
     margin-bottom: 20px;
 }
 
+
+
 .phone {
     width: 100%;
     grid-area: phone;
@@ -47,6 +51,7 @@
 
 .linkTitle {
     font-size: var(--font-size-h4);
+
     letter-spacing: 0.5px;
     margin-bottom: 10px;
 }

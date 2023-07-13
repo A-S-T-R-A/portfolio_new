@@ -16,6 +16,11 @@ export function NavigationList(props: { closeClickHandler?: () => void; classNam
                     </li>
                 )
             })}
+            <li className={styles.item} onClick={closeClickHandler}>
+                <a className={styles.undreline} onClick={() => window.open("/cv.pdf", "_blank")}>
+                    Resume
+                </a>
+            </li>
         </ul>
     )
 }

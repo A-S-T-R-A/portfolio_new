@@ -24,9 +24,22 @@
 .content {
     padding: 20px;
     border-radius: 12px;
-    background: var(--color-light-bg);
+    background: var(--color-base-bg);
     transition: 0.3s all ease;
     max-width: 60%;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    color: var(--color-base);
+
+    &:hover {
+        filter: brightness(80%);
+    }
 }
 
 .isOpen {

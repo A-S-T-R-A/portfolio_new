@@ -1,8 +1,9 @@
 import { ReactElement } from "react"
 import { ModalDataBlog, ModalDataShop } from "../ui/ModalData/ModalData"
-import shop from "shared/assets/images/projectsSection/shop.jpg"
-import blog from "shared/assets/images/projectsSection/blog.jpg"
-import chess from "shared/assets/images/projectsSection/chess.jpg"
+import shop from "shared/assets/images/projectsSection/shop.webp"
+import blog from "shared/assets/images/projectsSection/blog.webp"
+import realtor from "shared/assets/images/projectsSection/realtor.webp"
+import chat from "shared/assets/images/projectsSection/chat_mid.webp"
 
 export interface IProjectData {
     id: number
@@ -10,12 +11,31 @@ export interface IProjectData {
     img: string
     description: string
     technologies: string[]
-    code: string
-    demo: string
+    code: string | null
+    demo: string | null
     ModalData?: () => ReactElement
 }
 
 export const projectsData: IProjectData[] = [
+    {
+        id: 3,
+        name: "Real-time chat",
+        img: chat,
+        description: `Advanced real-time chat startup with realtime features, synchronization and communication beteen users`,
+        technologies: ["React", "Redux", "TS"],
+        code: null,
+        demo: null,
+    },
+    {
+        id: 4,
+        name: "Real estate rental",
+        img: realtor,
+        description: `Real estate rental application with rental homes and for-sale properties, advanced property filtering.`,
+        technologies: ["Next.js", "Redux"],
+        code: null,
+        demo: null,
+    },
+
     {
         id: 1,
         name: "Astra Shop",
@@ -36,7 +56,7 @@ export const projectsData: IProjectData[] = [
         demo: "https://astra-blog.netlify.app/",
         ModalData: ModalDataBlog,
     },
-    {
+    /*  {
         id: 3,
         name: "Chess",
         img: chess,
@@ -44,5 +64,5 @@ export const projectsData: IProjectData[] = [
         technologies: ["React", "TS"],
         code: "https://github.com/Art1us/chess",
         demo: "https://astra-chess.netlify.app/",
-    },
+    }, */
 ]
