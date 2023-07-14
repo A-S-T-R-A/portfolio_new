@@ -19,12 +19,13 @@
 }
 
 .text {
-    max-width: 500px;
+    max-width: 550px;
     color: var(--color-dark-gray);
     font-size: 18px;
     letter-spacing: 0.2px;
     line-height: 1.5em;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .connect {

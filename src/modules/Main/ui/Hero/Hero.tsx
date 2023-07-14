@@ -18,7 +18,8 @@ function Hero() {
                 My name is Artur Pazyniuk. I'm a motivated and skilled software engineer with 5
                 years experience of building efficient and scalable web solutions.
                 <br />
-                My tech stack is React, Redux, TS, SCSS.
+                In addition to my main job, I lead a team of developers building various projects as
+                a web development studio.
             </p>
             <Button onClick={clickHandler} variant={ButtonVariant.CLEAR} className={styles.connect}>
                 <p>My Resume</p>
