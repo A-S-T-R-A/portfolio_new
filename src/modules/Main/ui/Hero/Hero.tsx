@@ -15,11 +15,9 @@ function Hero() {
                 I'm a <span className={styles.accent}>Front End Developer</span>
             </h1>
             <p className={styles.text}>
-                My name is Artur Pazyniuk. I'm a motivated and skilled software engineer with 5
-                years experience of building efficient and scalable web solutions.
-                <br />
-                In addition to my main job, I lead a team of developers building various projects as
-                a web development studio.
+                Hi, my name is Artur. I am software engineer with more than 5 years of experience
+                with such technologies: React, Redux, TS. I worked in such business domains as:
+                E-commerce, Real Estate and Communication/Messaging.
             </p>
             <Button onClick={clickHandler} variant={ButtonVariant.CLEAR} className={styles.connect}>
                 <p>My Resume</p>
