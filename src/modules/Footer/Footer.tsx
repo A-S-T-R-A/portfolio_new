@@ -15,11 +15,11 @@ function Footer() {
                         </a>
                     </div>
                     <div className={styles.email}>
-                        <a className={styles.linkTitle} href="mailto:PazyniukArtur@gmail.com">
+                        <a className={styles.linkTitle} href="mailto:artur0503915024@gmail.com">
                             Email
                         </a>
-                        <a className={styles.link} href="mailto:PazyniukArtur@gmail.com">
-                            PazyniukArtur@gmail.com
+                        <a className={styles.link} href="mailto:artur0503915024@gmail.com">
+                            artur0503915024@gmail.com
                         </a>
                     </div>
                     <div className={styles.socialIcons}>
