@@ -1,7 +1,6 @@
 import { Canvas } from "modules/Canvas"
 import { Background } from "modules/Background/Background"
 import { DeviceType } from "shared/data"
-import { Contact } from "modules/Contact"
 import { Footer } from "modules/Footer"
 import { Header } from "modules/Header"
 import { Main } from "modules/Main"
@@ -34,7 +33,6 @@ function App() {
                 <Main />
                 <Projects />
                 <Technologies />
-                <Contact />
             </div>
             <Footer />
         </div>
