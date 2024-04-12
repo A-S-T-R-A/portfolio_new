@@ -1,6 +1,6 @@
 import styles from "./Main.module.css"
 import Hero from "./Hero/Hero"
-import { ScrollIcon } from "shared/ui/ScrollIcon/ScrollIcon"
+import { AnimatedScroll } from "shared/ui/AnimatedScroll/AnimatedScroll"
 
 const height = window.innerHeight
 
@@ -10,7 +10,12 @@ function Main() {
             <section className={styles.container}>
                 <Hero />
             </section>
-            <ScrollIcon className={styles.icon} query="#projects" />
+            <AnimatedScroll
+                className={styles.scrollDown}
+                query="#projects"
+                height="60px"
+                width="60px"
+            />
         </main>
     )
 }
