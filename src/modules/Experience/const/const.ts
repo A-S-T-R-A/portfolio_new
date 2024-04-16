@@ -1,6 +1,6 @@
 export const ExperienceMockData = [
     {
-        logo: "/src/shared/assets/images/logo.webp",
+        logo: "public/logo.webp",
         position: "Frontend Developer",
         companyName: "Company 1",
         term: "Jan 2020 - Present",
@@ -9,7 +9,7 @@ export const ExperienceMockData = [
         technologies: ["React", "Redux", "TypeScript", "SCSS"],
     },
     {
-        logo: "/src/shared/assets/images/logo.webp",
+        logo: "public/logo.webp",
         position: "Backend Developer",
         companyName: "Company 2",
         term: "Jan 2018 - Dec 2019",
@@ -18,7 +18,7 @@ export const ExperienceMockData = [
         technologies: ["Node.js", "Express", "MongoDB", "GraphQL"],
     },
     {
-        logo: "/src/shared/assets/images/logo.webp",
+        logo: "public/logo.webp",
         position: "Fullstack Developer",
         companyName: "Company 3",
         term: "Jan 2016 - Dec 2017",
@@ -36,7 +36,7 @@ export const ExperienceMockData = [
         ],
     },
     {
-        logo: "/src/shared/assets/images/logo.webp",
+        logo: "public/logo.webp",
         position: "Frontend Developer",
         companyName: "Company 1",
         term: "Jan 2020 - Present",
@@ -45,7 +45,7 @@ export const ExperienceMockData = [
         technologies: ["React", "Redux", "TypeScript", "SCSS"],
     },
     {
-        logo: "/src/shared/assets/images/logo.webp",
+        logo: "public/logo.webp",
         position: "Backend Developer",
         companyName: "Company 2",
         term: "Jan 2018 - Dec 2019",
@@ -54,7 +54,7 @@ export const ExperienceMockData = [
         technologies: ["Node.js", "Express", "MongoDB", "GraphQL"],
     },
     {
-        logo: "/src/shared/assets/images/logo.webp",
+        logo: "public/logo.webp",
         position: "Fullstack Developer",
         companyName: "Company 3",
         term: "Jan 2016 - Dec 2017",
