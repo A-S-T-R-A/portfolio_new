@@ -24,10 +24,10 @@ export function ExperienceCard(props: IExperienceCardProps) {
                     []
                 )}
             >
-                <Typography color={TypographyColor.LIGHT_GRAY}>{term}</Typography>
-                <div>
-                    <img src={logo} alt="" className={styles.logo} />
-                </div>
+                <Typography color={TypographyColor.LIGHT_GRAY} className={styles.roundTerm}>
+                    {term}
+                </Typography>
+                <img src={logo} alt="" className={styles.logo} />
             </div>
             <div className={styles.arrow} />
             <div className={styles.cardContainer}>

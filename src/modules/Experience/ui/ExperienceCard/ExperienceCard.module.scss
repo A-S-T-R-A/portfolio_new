@@ -78,3 +78,28 @@
         }
     }
 }
+
+@media (max-width: 1060px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+        min-width: 0;
+
+        .roundPicContainer {
+            gap: 12px;
+            margin: 0 auto;
+            position: relative;
+
+            .roundTerm {
+                position: absolute;
+                right: -160px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .cardContainer {
+            width: 100%;
+        }
+    }
+}
