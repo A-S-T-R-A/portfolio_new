@@ -4,12 +4,10 @@ import { DeviceType } from "shared/data"
 import { Footer } from "modules/Footer"
 import { Header } from "modules/Header"
 import { Main } from "modules/Main"
-import { Projects } from "modules/Projects"
 import { Technologies } from "modules/Technologies"
 import { useEffect, useState } from "react"
 import { getCurrentDevice } from "shared/lib/getCurrentDevice/getCurrentDevice"
 import { useDebounce } from "shared/lib/useDebounce/useDebounce"
-import { Experience } from "modules/Experience/ui/Experience"
 import { ExperienceAndProjects } from "modules/ExperienceAndProjects/ExperienceAndProjects"
 
 function App() {
