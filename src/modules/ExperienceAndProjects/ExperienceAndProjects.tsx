@@ -1,7 +1,7 @@
 import { Experience } from "modules/Experience/ui/Experience"
 import { Projects } from "modules/Projects"
 import { useState } from "react"
-import { Button } from "shared/ui/Button/Button"
+import { Button, ButtonColor } from "shared/ui/Button/Button"
 import styles from "./ExperienceAndProjects.module.scss"
 
 export function ExperienceAndProjects() {
@@ -14,6 +14,7 @@ export function ExperienceAndProjects() {
                     onClick={() => setShownSection("Projects")}
                     disabled={shownSection === "Projects"}
                     className={styles.button}
+                    color={shownSection !== "Projects" ? ButtonColor.INVERTED : ButtonColor.ACCENT}
                 >
                     Projects
                 </Button>
@@ -21,6 +22,9 @@ export function ExperienceAndProjects() {
                     onClick={() => setShownSection("Experience")}
                     disabled={shownSection === "Experience"}
                     className={styles.button}
+                    color={
+                        shownSection !== "Experience" ? ButtonColor.INVERTED : ButtonColor.ACCENT
+                    }
                 >
                     Experience
                 </Button>

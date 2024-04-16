@@ -19,6 +19,7 @@
         .logo {
             width: 60px;
             height: 60px;
+            flex-shrink: 0;
             border-radius: 50px;
             margin-top: 4px;
             object-fit: contain;
@@ -81,21 +82,12 @@
 
 @media (max-width: 1060px) {
     .container {
-        flex-direction: column;
         gap: 20px;
         min-width: 0;
+        flex-direction: row;
 
         .roundPicContainer {
-            gap: 12px;
-            margin: 0 auto;
-            position: relative;
-
-            .roundTerm {
-                position: absolute;
-                right: -160px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
+            flex-direction: row-reverse;
         }
 
         .cardContainer {

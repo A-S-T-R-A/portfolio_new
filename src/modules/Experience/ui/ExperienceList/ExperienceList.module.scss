@@ -21,5 +21,11 @@
 @media (max-width: 1060px) {
     .container {
         gap: 32px;
+
+        .timeLine {
+            left: 54px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
 }

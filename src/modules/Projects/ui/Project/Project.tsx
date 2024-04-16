@@ -84,9 +84,6 @@ export function Project({ data, isReverted }: { data: IProjectData; isReverted: 
                         </div>
                     </div>
                 </div>
-                <div className={styles.image}>
-                    <img src={img} alt="project" />
-                </div>
             </div>
         </>
     )
