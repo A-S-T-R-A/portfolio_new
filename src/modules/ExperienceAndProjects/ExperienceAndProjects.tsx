@@ -6,6 +6,7 @@ import styles from "./ExperienceAndProjects.module.scss"
 
 export function ExperienceAndProjects() {
     const [shownSection, setShownSection] = useState("Experience")
+
     console.log(shownSection)
     return (
         <div className={styles.container}>
