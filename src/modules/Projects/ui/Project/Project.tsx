@@ -8,7 +8,7 @@ import styles from "./Project.module.scss"
 import { classNames } from "shared/lib/classNames/classNames"
 
 export function Project({ data, isReverted }: { data: IProjectData; isReverted: boolean }) {
-    const { name, description, img, technologies, code, demo, ModalData } = data
+    const { name, description, technologies, code, demo, ModalData } = data
 
     const [isOpen, setIsOpen] = useState(false)
 
