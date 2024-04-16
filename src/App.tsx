@@ -9,6 +9,8 @@ import { Technologies } from "modules/Technologies"
 import { useEffect, useState } from "react"
 import { getCurrentDevice } from "shared/lib/getCurrentDevice/getCurrentDevice"
 import { useDebounce } from "shared/lib/useDebounce/useDebounce"
+import { Experience } from "modules/Experience/ui/Experience"
+import { ExperienceAndProjects } from "modules/ExperienceAndProjects/ExperienceAndProjects"
 
 function App() {
     const [device, setDevice] = useState<DeviceType>(() => getCurrentDevice(window.innerWidth))
@@ -31,7 +33,7 @@ function App() {
             <div>
                 <Background currentDevice={device} />
                 <Main />
-                <Projects />
+                <ExperienceAndProjects />
                 <Technologies />
             </div>
             <Footer />
