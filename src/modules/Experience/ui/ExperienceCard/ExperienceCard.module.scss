@@ -1,0 +1,97 @@
+.reverted {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+.container {
+    display: flex;
+    min-width: 1010px;
+    justify-content: flex-end;
+    gap: 20px;
+
+    .roundPicContainer {
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        height: fit-content;
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            border-radius: 50px;
+            margin-top: 4px;
+            object-fit: contain;
+            border: 3px solid white;
+            background-color: black;
+        }
+    }
+
+    .cardContainer {
+        width: 435px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background: rgba(17, 25, 40, 0.83);
+        color: rgb(255, 255, 255);
+        box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        border-radius: 6px;
+        padding: 24px;
+
+        .header {
+            display: flex;
+            gap: 12px;
+
+            .logoCard {
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+                margin-top: 4px;
+                object-fit: contain;
+            }
+
+            .position {
+                font-size: 18px;
+                line-height: 27px;
+            }
+
+            .companyName {
+                font-size: 14px;
+                line-height: 21px;
+            }
+
+            .cardTerm {
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+
+        .description {
+            font-size: 15px;
+        }
+
+        .skillsSection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+    }
+}
+
+@media (max-width: 1060px) {
+    .container {
+        gap: 20px;
+        min-width: 0;
+        flex-direction: row;
+
+        .roundPicContainer {
+            flex-direction: row-reverse;
+        }
+
+        .cardContainer {
+            width: 100%;
+        }
+    }
+}

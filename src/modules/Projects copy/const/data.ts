@@ -14,7 +14,6 @@ export interface IProjectData {
     code: string | null
     demo: string | null
     ModalData?: () => ReactElement
-    isReverted?: boolean
 }
 
 export const projectsData: IProjectData[] = [
