@@ -17,8 +17,14 @@ import lokiIcon from "./loki.png"
 import webpackIcon from "./webpack.png"
 import eslintIcon from "./eslint.png"
 import stylelintIcon from "./stylelint.png"
+import muiIcon from "./mui.png"
+import tailwindIcon from "./tailwind.png"
+import cypressIcon from "./cypress.png"
 
 export {
+    muiIcon,
+    tailwindIcon,
+    cypressIcon,
     jsIcon,
     nodeIcon,
     sassIcon,

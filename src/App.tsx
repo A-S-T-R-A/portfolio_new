@@ -1,15 +1,14 @@
 import { Canvas } from "modules/Canvas"
 import { Background } from "modules/Background/Background"
 import { DeviceType } from "shared/data"
-import { Contact } from "modules/Contact"
 import { Footer } from "modules/Footer"
 import { Header } from "modules/Header"
 import { Main } from "modules/Main"
-import { Projects } from "modules/Projects"
 import { Technologies } from "modules/Technologies"
 import { useEffect, useState } from "react"
 import { getCurrentDevice } from "shared/lib/getCurrentDevice/getCurrentDevice"
 import { useDebounce } from "shared/lib/useDebounce/useDebounce"
+import { ExperienceAndProjects } from "modules/ExperienceAndProjects/ExperienceAndProjects"
 
 function App() {
     const [device, setDevice] = useState<DeviceType>(() => getCurrentDevice(window.innerWidth))
@@ -32,9 +31,8 @@ function App() {
             <div>
                 <Background currentDevice={device} />
                 <Main />
-                <Projects />
+                <ExperienceAndProjects />
                 <Technologies />
-                <Contact />
             </div>
             <Footer />
         </div>

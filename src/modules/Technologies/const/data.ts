@@ -3,17 +3,17 @@ import {
     reduxIcon,
     reactIcon,
     nextIcon,
-    cssIcon,
     typescriptIcon,
-    htmlIcon,
     scssIcon,
     i18nIcon,
     jestIcon,
     storybookIcon,
-    lokiIcon,
     webpackIcon,
     eslintIcon,
-    stylelintIcon,
+    nodeIcon,
+    muiIcon,
+    tailwindIcon,
+    cypressIcon,
 } from "shared/assets/images/technologies"
 
 export interface ITechnologyItem {
@@ -73,11 +73,12 @@ export const technologiesData: ITechnologyItem[] = [
         img: storybookIcon,
         desc: "Experience with Storybook",
     },
+
     {
         id: 213,
-        title: "Loki",
-        img: lokiIcon,
-        desc: "Experience with Loki",
+        title: "Mui",
+        img: muiIcon,
+        desc: "Experience with MUI",
     },
     {
         id: 14,
@@ -93,9 +94,9 @@ export const technologiesData: ITechnologyItem[] = [
     },
     {
         id: 115,
-        title: "Stylelint",
-        img: stylelintIcon,
-        desc: "Experience with Stylelint",
+        title: "Tailwind",
+        img: tailwindIcon,
+        desc: "Experience with Tailwind",
     },
     {
         id: 10,
@@ -105,14 +106,14 @@ export const technologiesData: ITechnologyItem[] = [
     },
     {
         id: 11,
-        title: "HTML",
-        img: htmlIcon,
+        title: "Cypress",
+        img: cypressIcon,
         desc: "Experience with HTML",
     },
     {
         id: 12,
-        title: "CSS",
-        img: cssIcon,
-        desc: "Experience with CSS",
+        title: "Node",
+        img: nodeIcon,
+        desc: "Experience with Node",
     },
 ]

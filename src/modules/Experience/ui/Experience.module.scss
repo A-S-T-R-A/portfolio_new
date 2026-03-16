@@ -5,18 +5,18 @@
     display: none;
     flex-direction: column;
     align-items: center;
-
-    .title {
-        margin-bottom: 40px;
-    }
-
-    .projects {
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-    }
 }
 
 .shown {
     display: flex;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }

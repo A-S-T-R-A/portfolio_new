@@ -18,10 +18,9 @@ export function Projects({ shown }: { shown: string }) {
                     My Projects
                 </Typography>
                 <div className={styles.projects}>
-                    {data.map((item, index) => {
-                        const reverted = index % 2 === 0
-                        return <Project key={item.id} data={item} isReverted={reverted} />
-                    })}
+                    {data.map(item => (
+                        <Project key={item.id} data={item} />
+                    ))}
                 </div>
             </div>
         </div>

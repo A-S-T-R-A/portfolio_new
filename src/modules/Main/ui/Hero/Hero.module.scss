@@ -28,11 +28,20 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.connectContainer {
+    width: fit-content;
+}
+
+.connectContainer:hover .connect {
+    transition: 0.3s ease-in-out;
+    margin-left: 25px;
+    color: var(--color-accent) !important;
+}
+
 .connect {
     font-weight: 700;
     font-size: 20px;
     letter-spacing: 0.5px;
-    transition: 0.3s ease-in-out;
     width: fit-content;
     padding-left: 0;
     display: flex;
@@ -41,11 +50,6 @@
 
     .icon {
         margin-left: 10px;
-    }
-
-    &:hover {
-        margin-left: 25px;
-        color: var(--color-accent) !important;
     }
 }
 
